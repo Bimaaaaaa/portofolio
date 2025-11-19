@@ -1,0 +1,612 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace; /* Font terminal */
+    background-color: #1a1a1a; /* Latar belakang hitam */
+    color: #fff; /* Teks putih */
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex: 1;
+}
+
+
+
+
+
+/* Navbar */
+.navbar {
+    width: 250px;
+    background-color: #111; /* Warna navbar hitam */
+    color: #fff;
+    height: 100%;
+    position: fixed;
+    padding-top: 20px;
+    padding-left: 40px;
+    font-size: 16px;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;  /* Menggunakan flexbox */
+    flex-direction: column;  /* Menyusun elemen secara vertikal */
+    align-items: flex-start; /* Menyelaraskan elemen ke kiri */
+}
+
+.navbar img {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    border: 2px solid #fff; /* Garis putih di sekitar gambar profil */
+    margin-bottom: 11px;
+    margin-top: 20px;
+}
+
+.navbar .name {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.navbar .username {
+    font-size: 16px;
+    color: #bbb; /* Warna abu-abu untuk username */
+    margin-top: 1px; /* Memberikan jarak sedikit antara nama dan username */
+}
+
+.navbar ul {
+    list-style: none;
+    margin-top: 40px;
+    padding: 0;
+}
+
+.navbar ul li {
+    padding: 15px;
+    text-align: left;
+    display: flex; /* Menggunakan flexbox untuk sejajar */
+    align-items: center; /* Menyelaraskan elemen secara vertikal */
+}
+
+.navbar ul li a {
+    color: #fff;
+    text-decoration: none;
+    display: flex;  /* Menggunakan flexbox untuk ikon dan teks */
+    align-items: center; /* Menjaga agar ikon dan teks sejajar vertikal */
+    width: 100%;
+    outline: none; /* Menghilangkan outline ketika diklik */
+    box-shadow: none; /* Menghilangkan efek bayangan atau highlight */
+}
+
+/* Menghilangkan efek focus dan hover pada elemen <a> */
+.navbar ul li a:focus,
+.navbar ul li a:hover {
+    background: none; /* Hilangkan background saat hover atau focus */
+    box-shadow: none; /* Hilangkan shadow saat focus atau hover */
+    outline: none; /* Pastikan outline tetap hilang */
+}
+
+/* Styling untuk ikon di navbar */
+.navbar ul li a i {
+    margin-right: 10px; /* Memberikan jarak antara ikon dan teks */
+    font-size: 20px; /* Ukuran ikon */
+}
+
+/* Tambahan untuk padding dan margin agar tidak terlalu rapat */
+.navbar ul li a {
+    padding: 5px 0; /* Memberikan sedikit padding untuk jarak yang lebih baik */
+}
+
+
+
+
+
+
+
+
+/* Konten utama */
+.main-content {
+    margin-left: 260px;
+    padding: 20px;
+    background-color: #222; /* Warna latar belakang gelap untuk konten */
+    color: #fff;
+    font-family: 'Courier New', Courier, monospace;
+    flex: 1;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+h1, h2, h3 {
+    color: #fff; /* Teks judul putih */
+    font-weight: bold;
+}
+
+
+
+/* Styling untuk bagian Tools */
+.tools p {
+    font-style: italic;
+    color: #bbb; /* Warna teks tools abu-abu */
+}
+
+/* Footer */
+footer {
+    background-color: #111; /* Footer hitam */
+    color: #bbb; /* Teks footer abu-abu */
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    font-size: 14px;
+}
+
+/* Responsif untuk mobile */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    .navbar {
+        width: 100%;
+        height: auto;
+    }
+    .main-content {
+        margin-left: 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* Styling untuk bagian Home */
+#home {
+    margin-bottom: 40px;
+}
+
+#home h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    display: flex; /* Agar teks bisa digerakkan lebih mudah */
+    align-items: center;
+}
+
+#home p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+#home h3 {
+    font-size: 2rem;
+    margin-top: 20px;
+}
+
+.tools ul {
+    list-style: none;
+    padding-left: 20px;
+}
+
+.tools ul li {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #bbb; /* Warna abu-abu untuk teks list */
+}
+
+
+
+/* CSS untuk efek mengetik */
+#dynamic-text {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid white; /* Efek cursor berkedip */
+    width: auto; /* Lebar otomatis mengikuti panjang teks */
+    animation: typing 4s steps(30, end), blink-caret 0.75s step-end infinite;
+    font-family: 'courier new';
+}
+    
+
+/* Animasi untuk mengetik */
+@keyframes typing {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%; /* Memastikan teks mengisi lebar penuh */
+    }
+}
+
+/* Animasi untuk cursor berkedip */
+@keyframes blink-caret {
+    50% {
+        border-color: transparent;
+    }
+}
+
+
+
+
+/* Styling untuk bagian Cyber Stats */
+.cyber-stats {
+    display: flex;
+    flex-direction: row; /* Menyusun elemen secara horizontal */
+    justify-content: space-evenly; /* Memberikan jarak yang sama antar item */
+    align-items: center; /* Menyelaraskan elemen secara vertikal di tengah */
+    margin-top: 50px; /* Memberikan jarak dari elemen sebelumnya */
+    margin-bottom: 50px; /* Memberikan jarak ke elemen berikutnya */
+}
+
+.stat-item {
+    font-family: 'Courier New', Courier, monospace; /* Font monospace untuk kesan terminal */
+    color: #00ff00; /* Warna hijau cyber */
+    font-size: 18px;
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 32px; /* Ukuran besar untuk angka */
+    font-weight: bold;
+    color: #00ff00; /* Hijau terang */
+}
+
+.stat-label {
+    font-size: 14px; /* Ukuran kecil untuk label */
+    color: #bbb; /* Warna abu-abu untuk label */
+    display: block;
+    margin-top: 5px;
+}
+
+
+
+
+
+
+
+
+/* Styling untuk bagian Tools */
+.tools {
+    margin-top: 30px;
+}
+
+.tools h3 {
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 20px; /* 🔹 Tambahkan jarak antar judul dan isinya */
+    font-family: "Courier New", monospace;
+    letter-spacing: 1px;
+}
+
+.tools-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; /* Jarak antar kotak tool */
+    margin-top: 20px; /* Jarak tambahan antara judul dan tools */
+}
+
+.tool-card {
+    border: 1px solid #555;
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-family: "Courier New", monospace;
+    background: #111;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.tool-card:hover {
+    background: #222;
+    box-shadow: 0 0 10px rgba(178, 178, 178, 0.65);
+    transform: translateY(-3px);
+}
+
+
+
+
+
+/* Styling untuk bagian Command Line */
+.cmd-section {
+    background-color: #000; /* Hitam */
+    font-family: "Courier New", monospace;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 40px;
+    box-shadow: none; /* Menghapus efek bayangan */
+    border: none; /* Menghapus border */
+}
+
+.cmd-header {
+    color: #bbb; /* Hijau agar konsisten */
+    margin-bottom: 0,5px; /* Mengurangi jarak agar lebih rapat */
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.cmd-body {
+    font-size: 16px;
+    line-height: 1.6;
+    white-space: pre-line;
+    color: #bbb; /* Warna teks putih untuk isi command line */
+}
+
+
+/* Styling untuk bagian Bash Terminal */
+.bash {
+    background-color: #000; /* Hitam untuk kesan terminal */
+    color: #fff; /* Teks putih untuk kontras yang baik */
+    font-family: "Courier New", monospace; /* Font terminal */
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 40px;
+    box-shadow: none; /* Menghapus bayangan */
+    text-align: left; /* Rata kiri untuk terminal */
+    line-height: 1.6;
+}
+
+.bash-header {
+    display: inline-block;
+    margin-bottom: 10; /* Menghapus margin bawah */
+    color: #bbb; /* Teks abu-abu untuk error */
+}
+
+.user-name {
+    color: #00ff00; /* Hijau untuk bmarz@MJ */
+}
+
+.shell {
+    color: #800080; /* Ungu untuk MINGW64 */
+}
+
+.current-directory {
+    color: #FFA500; /* Oranye untuk ~ */
+}
+
+.bash-body {
+    font-size: 16px;
+    color: #bbb; /* Teks abu-abu untuk error */
+    white-space: pre-line; /* Menjaga format seperti terminal */
+    letter-spacing: 0.5px; /* Menambah jarak antar karakter untuk kesan terminal */
+    margin-top: 1px; /* Menambah jarak sedikit antara header dan body */
+    margin-bottom: 5px; /* Mengurangi jarak bawah */
+}
+
+.bash-prompt {
+    color: #00ff00; /* Hijau untuk tanda prompt (>) */
+    display: inline-block;
+    margin-right: 5px; /* Memberikan jarak setelah prompt */
+}
+
+.bash-command {
+    color: #bbb; /* Putih untuk command yang dimasukkan */
+    display: inline-block;
+    margin-left: 5px; /* Memberikan jarak sedikit agar lebih jelas */
+}
+
+.bash-body br {
+    display: inline-block; /* Menggunakan inline-block agar tidak ada spasi ekstra */
+}
+
+.bash-body span {
+    display: inline-block;
+    margin-bottom: 0; /* Menghapus margin bawah */
+}
+
+.bash-body .bash-prompt {
+    margin-right: 10px; /* Memberikan sedikit jarak agar prompt lebih terlihat terpisah dari teks */
+}
+
+a {
+    color: inherit; /* Menghapus warna biru link dan mengikuti warna teks default */
+    text-decoration: none; /* Menghapus garis bawah pada link */
+}
+
+
+
+
+
+
+/* Styling untuk bagian Projects */
+/* Styling untuk grid project */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 kolom */
+    gap: 20px; /* Jarak antar folder */
+    margin-top: 20px;
+}
+
+/* Responsif: 2 kolom untuk layar medium (tablet) */
+@media (max-width: 1024px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 kolom pada layar sedang */
+    }
+}
+
+/* Responsif: 1 kolom untuk layar kecil (ponsel) */
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr; /* 1 kolom pada layar kecil */
+    }
+}
+
+/* Folder container */
+.project-folder {
+    background-color: #222;
+    border: 1px solid #555;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: auto; /* Tidak ada batasan ukuran tetap */
+}
+
+/* Hover effect */
+.project-folder:hover {
+    background-color: #333;
+    transform: translateY(-5px);
+}
+
+/* Ikon Folder */
+.folder-icon i {
+    font-size: 30px;  /* Ukuran ikon */
+    color: #fff;  /* Warna ikon folder */
+    margin-bottom: 10px;  /* Jarak antara ikon dan judul */
+    transition: transform 0.2s ease;  /* Transisi saat ikon di-hover */
+}
+
+/* Efek saat hover ikon folder */
+.project-folder:hover .folder-icon i {
+    transform: scale(1.1);  /* Memperbesar ikon sedikit saat hover */
+}
+
+/* Folder name */
+.folder-header {
+    font-weight: bold;
+    font-family: 'Courier New', monospace;
+    color: #fff;
+    margin-bottom: 10px;
+    font-size: 16px;
+    text-transform: uppercase;  /* Menambahkan kesan profesional */
+}
+
+/* Folder content */
+.folder-content {
+    display: none;
+    margin-top: 15px;
+    color: #ccc;
+    font-size: 14px;
+    overflow: hidden;
+    transition: all 0.3s ease-out;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* Ketika folder dibuka, menampilkan konten */
+.project-folder.open .folder-content {
+    display: block;
+    height: auto;  /* Tidak ada batasan ukuran */
+    padding-top: 10px;
+}
+
+/* Animasi saat folder dibuka */
+@keyframes slideDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Screenshot */
+.folder-screenshot {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+/* Tools Section */
+.tools {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.tools-h4 {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #ddd;
+    margin-bottom: 10px;
+    font-family: "Courier New", monospace;
+    letter-spacing: 1px;
+}
+
+.tool-icon {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    width: 120px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.tool-icon i {
+    font-size: 10px;
+}
+
+.tool-icon:hover {
+    background-color: #444;
+    transform: translateY(-3px);
+}
+
+/* Links Section */
+.folder-content ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 15px;
+}
+
+.folder-content ul li {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.folder-content ul li a {
+    color: #00ff00;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.folder-content ul li a:hover {
+    color: #fff;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .tools {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .tool-icon {
+        width: auto;
+        font-size: 8px;
+    }
+}
+
+.project-dates {
+    color: #bbb;  /* Warna teks abu-abu */
+    font-size: 14px;  /* Ukuran font */
+    margin-top: 10px;  /* Jarak sedikit di atas */
+    display: block;
+}
