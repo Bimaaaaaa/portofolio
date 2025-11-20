@@ -80,7 +80,7 @@
                         <!-- Links to Resources Section -->
                         <h4 class="tools-h4">Related Resources:</h4>
                         <ul>
-                            <li><a href="https://github.com/your-repo" target="_blank">GitHub Repository</a></li>
+                            <li><a href="https://github.com/Bimaaaaaa/keystroke.git" target="_blank">GitHub Repository</a></li>
                             <li><span class="project-dates">August 2025 - January 2026</span></li>
                         </ul>
                     </div>

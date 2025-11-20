@@ -3,7 +3,7 @@
 </head>
 
 <div class="profile">
-    <img src="assets/images/profile.jpeg" alt="Bima's Profile">
+    <img src="assets/images/profile.jpg" alt="Bima's Profile">
     <div class="name">Bima Rizki</div>
     <div class="username">@bmarzky</div>
 </div>
