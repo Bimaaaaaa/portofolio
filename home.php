@@ -9,8 +9,8 @@
             (c) Microsoft Corporation. All rights reserved.<br>
         </div>
         <div class="cmd-body">
-        C:\Users\bmarz> Saya seorang yang tertarik di dunia cybersecurity. Minat saya berawal dari rasa ingin tahu tentang cara sistem dan jaringan bekerja, serta bagaimana cara melindungi data dari potensi ancaman. Saya percaya bahwa keamanan dunia maya adalah aspek yang sangat penting dalam era digital ini, dan saya ingin terus belajar dan berkontribusi di bidang ini.
-        'Saya' is not recognized as an internal or external command,
+        C:\Users\bmarz> I am interested in cybersecurity. My curiosity about how systems and networks work led me to this field, and I want to learn how to protect data from threats. I believe cybersecurity is important in today's digital world, and I hope to keep improving my skills and contributing.
+        'I' is not recognized as an internal or external command,
         operable program or batch file.<br>
         C:\Users\bmarz> exit
         </div>
@@ -56,8 +56,8 @@
             (c) Microsoft Corporation. All rights reserved.<br>
         </div>
         <div class="cmd-body">
-            C:\Users\bmarz> Saya membantu organisasi dan individu dalam mengamankan sistem, jaringan, serta aplikasi dari potensi serangan dengan menerapkan analisis forensik, ethical hacking, dan strategi pertahanan siber yang efektif.
-            'Saya' is not recognized as an internal or external command,
+            C:\Users\bmarz> I am exploring cybersecurity and learning how to help individuals and organizations protect their systems, networks, and data. Through my college projects, I practice basic ethical hacking, security analysis, and strategies to keep digital environments safe.
+            'I' is not recognized as an internal or external command,
 operable program or batch file.<br>
             C:\Users\bmarz>
             C:\Users\bmarz>
@@ -80,8 +80,8 @@ operable program or batch file.<br>
                 > ^C
 
                 <span class="user-name">bmarz@MJ</span> <span class="shell">MINGW64</span> <span class="current-directory">~</span>
-                $ Saya terbuka untuk proyek freelance dalam bidang keamanan siber. Jika Anda membutuhkan bantuan untuk mengamankan sistem, melakukan uji penetrasi, atau solusi keamanan lainnya, silakan hubungi saya dan mari kita bahas bagaimana kita dapat bekerja sama untuk melindungi data dan privasi.
-                bash: Saya: command not found.
+                $ I am open to opportunities where I can gain experience, work on projects, and improve my understanding of protecting systems, networks, and data.
+                bash: I: command not found.
 
                 <span class="user-name">bmarz@MJ</span> <span class="shell">MINGW64</span> <span class="current-directory">~</span>
                 $ <span class="bash-command"><a href="mailto:email@example.com" class="command-link">contact me</a></span>

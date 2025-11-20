@@ -1,14 +1,14 @@
 // Daftar kata yang ingin ditampilkan
 const words = [
     "Bima Rizki",
-    "Passionate about network security",
-    "Interested in ethical hacking",
-    "Focused on penetration testing",
-    "Proficient in Python",
-    "Well-versed in network security protocols",
-    "Experienced with Wireshark",
-    "Knowledgeable in firewalls and VPNs",
-    "Committed to continuous learning"
+    "Passionate about learning network security",
+    "Interested in exploring ethical hacking",
+    "Curious about penetration testing",
+    "Learning Python for cybersecurity purposes",
+    "Familiar with basic network security concepts",
+    "Practicing with Wireshark on lab projects",
+    "Learning about firewalls and VPNs",
+    "Committed to continuous learning in cybersecurity",
 ];
 
 let wordIndex = 0;
