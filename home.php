@@ -20,16 +20,16 @@
 
     <div class="cyber-stats">
         <div class="stat-item">
-            <span class="stat-number">3+</span>
+            <span class="stat-number">0,3+</span>
             <span class="stat-label">Years of experience</span>
         </div>
         <div class="stat-item">
-            <span class="stat-number">12+</span>
+            <span class="stat-number">1+</span>
             <span class="stat-label">Completed projects</span>
         </div>
         <div class="stat-item">
-            <span class="stat-number">10</span>
-            <span class="stat-label">Satisfied customers</span>
+            <span class="stat-number">0</span>
+            <span class="stat-label">Certification</span>
         </div>
     </div>
 

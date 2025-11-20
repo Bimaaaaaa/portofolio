@@ -14,6 +14,10 @@ body {
     height: 100vh;
 }
 
+body::-webkit-scrollbar {
+    display: none;
+}
+
 .container {
     display: flex;
     flex: 1;
@@ -37,6 +41,8 @@ body {
     display: flex;  /* Menggunakan flexbox */
     flex-direction: column;  /* Menyusun elemen secara vertikal */
     align-items: flex-start; /* Menyelaraskan elemen ke kiri */
+    outline: none;
+    box-shadow: none;
 }
 
 .navbar img {
@@ -89,12 +95,16 @@ body {
     background: none; /* Hilangkan background saat hover atau focus */
     box-shadow: none; /* Hilangkan shadow saat focus atau hover */
     outline: none; /* Pastikan outline tetap hilang */
+    text-decoration: none !important;
+    border-bottom: none !important;
 }
 
 /* Styling untuk ikon di navbar */
 .navbar ul li a i {
     margin-right: 10px; /* Memberikan jarak antara ikon dan teks */
     font-size: 20px; /* Ukuran ikon */
+    outline: none; /* Menghilangkan outline ketika diklik */
+    box-shadow: none; /* Menghilangkan efek bayangan atau highlight */
 }
 
 /* Tambahan untuk padding dan margin agar tidak terlalu rapat */
@@ -418,6 +428,173 @@ a {
 
 
 
+/* Projects Grid Layout */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 10px;
+    margin-top: 20px; /* Add some top margin for spacing */
+}
+
+/* Project Folder Styling */
+.project-folder {
+    background-color: #222; /* Dark background */
+    border: 1px solid #444; /* Lighter border */
+    border-radius: 8px;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center align content */
+    margin-bottom: 20px; /* Add space below the folder */
+}
+
+/* Hover effect */
+.project-folder:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px);
+}
+
+/* Folder Icon and Header */
+.folder-icon {
+    font-size: 2rem; /* Smaller icon size */
+    color: #bbb; /* Lighter gray for icons */
+    margin-bottom: 15px; /* Add spacing below icon */
+}
+
+.folder-header {
+    font-size: 1.2rem;
+    color: #fff; /* White for the header */
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px; /* Increased space below header */
+}
+
+/* Folder Content (Initially hidden) */
+/* Folder Content (Initially hidden) */
+.folder-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out, opacity 0.3s ease-out;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center; /* Center-align the content */
+    margin-top: 10px; /* Add some space from the header */
+    visibility: hidden; /* Make sure the content is hidden */
+    opacity: 0; /* Hide content initially */
+}
+
+/* When the folder is opened, make the content visible */
+.project-folder.open .folder-content {
+    max-height: 1000px; /* Make sure the content area is tall enough */
+    visibility: visible;
+    opacity: 1; /* Fade in content */
+}
+
+/* Folder Content Adjustments (Ensuring no cut-off text) */
+.project-folder.open .folder-content p {
+    padding-bottom: 15px; /* Add padding at the bottom of text */
+}
+
+
+/* Ensure no content is visible until the folder is expanded */
+.project-dates {
+    font-size: 1rem;
+    color: #888; /* Light gray for dates */
+    display: block;
+    margin-top: 10px;
+}
+
+/* Screenshot Image */
+.folder-screenshot {
+    width: 100%;
+    height: 200px;  /* Atur tinggi gambar */
+    object-fit: cover;  /* Agar gambar tidak terdistorsi dan menyesuaikan ukuran kontainer */
+    border-radius: 5px;
+    margin-top: 15px;
+    margin-bottom: 20px; /* Add spacing below screenshot */
+}
+
+/* Tools Used Section */
+.tools {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 15px;
+    justify-content: center; /* Center the tools */
+}
+
+.tools-h4{
+    font-size: 1.1rem;
+    color: #fff; /* White for the tools header */
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.tools-h4-n{
+    font-size: 1.1rem;
+    color: #fff; /* White for the tools header */
+    margin-top: 5px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.tool-icon {
+    font-size: 1rem; /* Smaller icon size for tools */
+    color: #bbb; /* Lighter gray for tool icons */
+    display: flex;
+    align-items: center;
+}
+
+.tool-icon i {
+    margin-right: 8px;
+}
+
+/* Links */
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 15px; /* Add some space from previous sections */
+}
+
+ul li {
+    margin: 8px 0; /* Add more space between list items */
+}
+
+ul li a {
+    text-decoration: none;
+    color: #ccc; /* Light gray for links */
+    font-size: 1rem;
+}
+
+ul li a:hover {
+    text-decoration: underline;
+    color: #fff; /* White on hover for links */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr; /* Stack columns on small screens */
+    }
+
+    .project-folder {
+        padding: 15px; /* Reduce padding on smaller screens */
+    }
+
+    .main-content h1 {
+        font-size: 2rem;
+    }
+
+    .main-content p {
+        font-size: 1rem;
+    }
+}
+
+
 
 /* Contact Section */
 .contact-section {
@@ -430,11 +607,26 @@ a {
     width: 100%;
 }
 
+.contact-item a {
+    text-decoration: none; /* Menghilangkan garis bawah */
+    color: inherit !important; /* Menggunakan warna teks induk dan memastikan warna ini diprioritaskan */
+}
+
+.contact-item p {
+    display: flex;
+    align-items: center; /* Menjaga ikon dan teks tetap sejajar */
+}
+
+.contact-item i {
+    margin-right: 8px; /* Memberikan jarak antara ikon dan teks */
+}
+
+
 /* Title */
 .contact-section h2 {
     font-size: 2.5rem; /* Larger title */
     color: #fff;
-    margin-bottom: 20px;
+    margin-bottom: 2px;
 }
 
 .contact-section h3 {
@@ -458,7 +650,6 @@ a {
     padding: 15px 20px; /* Reduce padding to prevent overflow */
     display: flex;
     align-items: center; /* Vertically center icon and text */
-    justify-content: flex-start; /* Align icon and text to the left */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Shadow for depth */
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
@@ -479,14 +670,8 @@ a {
 }
 
 /* Link styling */
-.contact-item a {
-    color: #1e90ff; /* Blue color for links */
-    text-decoration: none;
-    font-weight: bold;
-}
-
 .contact-item a:hover {
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 /* Hover Effect */

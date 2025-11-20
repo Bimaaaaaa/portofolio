@@ -12,26 +12,27 @@
     <h3>Feel free to reach out to me through any of the following methods:</h3>
 
     <div class="contact-info">
-        <!-- Left Column (Email and GitHub) -->
-        <div class="contact-item">
-            <i class="fas fa-envelope"></i>
-            <p><strong>Email:</strong> <span>bmarzky.official@gmail.com</span></p>
-        </div>
-        <div class="contact-item">
-            <i class="fab fa-github"></i>
-            <p><strong>GitHub:</strong> <span>github.com/Bimaaaaaa</span></p>
-        </div>
-
-        <!-- Right Column (WhatsApp and LinkedIn) -->
-        <div class="contact-item">
-            <i class="fab fa-whatsapp"></i>
-            <p><strong>WhatsApp:</strong> <span>0895-3831-72727</span></p>
-        </div>
-        <div class="contact-item">
-            <i class="fab fa-linkedin"></i>
-            <p><strong>LinkedIn:</strong> <span>linkedin.com/in/bima-rizki17</span></p>
-        </div>
+    <!-- Left Column (Email and GitHub) -->
+    <div class="contact-item">
+        <i class="fas fa-envelope"></i>
+        <p><strong>Email:</strong> <a href="mailto:bmarzky.official@gmail.com">bmarzky.official@gmail.com</a></p>
     </div>
+    <div class="contact-item">
+        <i class="fab fa-github"></i>
+        <p><strong>GitHub:</strong> <a href="https://github.com/Bimaaaaaa" target="_blank">github.com/Bimaaaaaa</a></p>
+    </div>
+
+    <!-- Right Column (WhatsApp and LinkedIn) -->
+    <div class="contact-item">
+        <i class="fab fa-whatsapp"></i>
+        <p><strong>WhatsApp:</strong> <a href="https://wa.me/0895383172727" target="_blank">0895-3831-72727</a></p>
+    </div>
+    <div class="contact-item">
+        <i class="fab fa-linkedin"></i>
+        <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/bima-rizki17" target="_blank">linkedin.com/in/bima-rizki17</a></p>
+    </div>
+</div>
+
 </div>
 
     </div>

@@ -64,8 +64,14 @@ changeText();
 
 
 
+// JavaScript to toggle folder content visibility
 function toggleFolder(folder) {
     const content = folder.querySelector('.folder-content');
-    content.style.maxHeight = content.style.maxHeight ? null : content.scrollHeight + "px";
+    // Toggle the max-height to allow smooth opening and closing
+    if (content.style.maxHeight) {
+        content.style.maxHeight = null; // Close it
+    } else {
+        content.style.maxHeight = content.scrollHeight + "px"; // Open it
+    }
 }
 
