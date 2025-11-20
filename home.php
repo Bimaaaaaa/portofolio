@@ -38,16 +38,40 @@
 
     <div class="tools-section">
         <h3>Tools That I Have Used</h3>
-        <div class="tools-container">
-            <div class="tool-card">Wireshark</div>
-            <div class="tool-card">Metasploit</div>
-            <div class="tool-card">Burp Suite</div>
-            <div class="tool-card">Nmap</div>
-            <div class="tool-card">OWASP ZAP</div>
-            <div class="tool-card">John the Ripper</div>
-            <div class="tool-card">Aircrack-ng</div>
+
+        <div class="tools-slider">
+            <div class="slider-track">
+                <div class="tools-container">
+                    <div class="tool-card">Wireshark</div>
+                    <div class="tool-card">Metasploit</div>
+                    <div class="tool-card">Burp Suite</div>
+                    <div class="tool-card">Nmap</div>
+                    <div class="tool-card">OWASP ZAP</div>
+                    <div class="tool-card">John the Ripper</div>
+                    <div class="tool-card">Aircrack-ng</div>
+                    <div class="tool-card">Hydra</div>
+                    <div class="tool-card">Snort</div>
+                    <div class="tool-card">Hashcat</div>
+                    <div class="tool-card">Kali Linux Tools</div>
+                    <div class="tool-card">Suricata</div>
+                    <div class="tool-card">Tcpdump</div>
+                    <div class="tool-card">Nessus</div>
+                    <div class="tool-card">OpenVAS</div>
+                    <div class="tool-card">Maltego</div>
+                    <div class="tool-card">Autopsy</div>
+                    <div class="tool-card">Volatility</div>
+                    <div class="tool-card">Ghidra</div>
+                    <div class="tool-card">Sqlmap</div>
+                    <div class="tool-card">Recon-ng</div>
+                    <div class="tool-card">Netcat</div>
+                    <div class="tool-card">Fiddler</div>
+                    <div class="tool-card">Cuckoo Sandbox</div>
+                    <div class="tool-card">Social-Engineer Toolkit (SET)</div>
+                </div>
+            </div>
         </div>
     </div>
+
 
 
     <div class="cmd-section">

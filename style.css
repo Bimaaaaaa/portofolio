@@ -64,53 +64,40 @@ body::-webkit-scrollbar {
     font-size: 16px;
     color: #bbb; /* Warna abu-abu untuk username */
     margin-top: 1px; /* Memberikan jarak sedikit antara nama dan username */
+    margin-bottom: 40px;
 }
 
 .navbar ul {
     list-style: none;
-    margin-top: 40px;
+    margin: 0;      /* hapus margin atas */
     padding: 0;
 }
 
 .navbar ul li {
-    padding: 15px;
-    text-align: left;
-    display: flex; /* Menggunakan flexbox untuk sejajar */
-    align-items: center; /* Menyelaraskan elemen secara vertikal */
+    padding: 11px 0;  /* jarak antar item lebih kecil */
 }
 
 .navbar ul li a {
     color: #fff;
     text-decoration: none;
-    display: flex;  /* Menggunakan flexbox untuk ikon dan teks */
-    align-items: center; /* Menjaga agar ikon dan teks sejajar vertikal */
-    width: 100%;
-    outline: none; /* Menghilangkan outline ketika diklik */
-    box-shadow: none; /* Menghilangkan efek bayangan atau highlight */
+    display: flex;
+    align-items: center;
+    gap: 15px;      /* jarak antara ikon dan teks */
+    text-decoration: none; /* menghilangkan garis bawah */
+    color: #fff;           /* warna teks sesuai kebutuhan */
 }
 
-/* Menghilangkan efek focus dan hover pada elemen <a> */
-.navbar ul li a:focus,
+
 .navbar ul li a:hover {
-    background: none; /* Hilangkan background saat hover atau focus */
-    box-shadow: none; /* Hilangkan shadow saat focus atau hover */
-    outline: none; /* Pastikan outline tetap hilang */
-    text-decoration: none !important;
-    border-bottom: none !important;
+    text-decoration: none; /* tetap tidak ada garis bawah saat hover */
+    color: rgb(157, 157, 157);           /* contoh: ganti warna teks saat hover */
 }
 
-/* Styling untuk ikon di navbar */
 .navbar ul li a i {
-    margin-right: 10px; /* Memberikan jarak antara ikon dan teks */
-    font-size: 20px; /* Ukuran ikon */
-    outline: none; /* Menghilangkan outline ketika diklik */
-    box-shadow: none; /* Menghilangkan efek bayangan atau highlight */
+    margin-right: 10px; /* jarak ikon dan teks */
+    font-size: 20px;
 }
 
-/* Tambahan untuk padding dan margin agar tidak terlalu rapat */
-.navbar ul li a {
-    padding: 5px 0; /* Memberikan sedikit padding untuk jarak yang lebih baik */
-}
 
 
 
@@ -139,12 +126,6 @@ h1, h2, h3 {
 }
 
 
-
-/* Styling untuk bagian Tools */
-.tools p {
-    font-style: italic;
-    color: #bbb; /* Warna teks tools abu-abu */
-}
 
 /* Footer */
 footer {

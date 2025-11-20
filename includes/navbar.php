@@ -10,9 +10,8 @@
 
 <ul>
     <li><a href="./index.php"><i class="fas fa-home"></i> Home</a></li> <!-- Ikon Rumah untuk Home -->
-    <li><a href="#dashboard"><i class="fa-solid fa-grip"></i>  Dashboard</a></li> <!-- Ikon Dashboard -->
-    <li><a href="./project.php"><i class="fas fa-project-diagram"></i> Projects</a></li> <!-- Ikon Proyek -->
     <li><a href="#about"><i class="fas fa-info-circle"></i> About</a></li> <!-- Ikon Info untuk About -->
+    <li><a href="./project.php"><i class="fas fa-project-diagram"></i> Projects</a></li> <!-- Ikon Proyek -->
     <li><a href="./contact.php"><i class="fas fa-envelope"></i> Contact</a></li> <!-- Ikon Amplop untuk Contact -->
 </ul>
 

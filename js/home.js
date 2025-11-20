@@ -5,10 +5,10 @@ const words = [
     "Interested in exploring ethical hacking",
     "Curious about penetration testing",
     "Learning Python for cybersecurity purposes",
-    "Familiar with basic network security concepts",
-    "Practicing with Wireshark on lab projects",
+    "Familiar with network security basics",
+    "Practicing with Wireshark",
     "Learning about firewalls and VPNs",
-    "Committed to continuous learning in cybersecurity",
+    "Continuous learner in cybersecurity",
 ];
 
 let wordIndex = 0;
@@ -74,4 +74,3 @@ function toggleFolder(folder) {
         content.style.maxHeight = content.scrollHeight + "px"; // Open it
     }
 }
-
