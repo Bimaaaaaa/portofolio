@@ -21,20 +21,22 @@
         </div>
  
 
-    <div class="cyber-stats">
-        <div class="stat-item">
-            <span class="stat-number">0</span>
-            <span class="stat-label">Years of experience</span>
+        <div class="cyber-stats">
+            <div class="stat-item">
+                <span class="stat-number" data-target="1">0</span>
+                <span class="stat-label">Years of experience</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" data-target="15">0</span>
+                <span class="stat-label">Completed projects</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" data-target="3">0</span>
+                <span class="stat-label">Certification</span>
+            </div>
         </div>
-        <div class="stat-item">
-            <span class="stat-number">0</span>
-            <span class="stat-label">Completed projects</span>
-        </div>
-        <div class="stat-item">
-            <span class="stat-number">0</span>
-            <span class="stat-label">Certification</span>
-        </div>
-    </div>
+
+
 
 
 
@@ -75,11 +77,4 @@
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
 </section>

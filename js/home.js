@@ -150,3 +150,62 @@ function toggleFolder(folder) {
   }
 
 })();
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const stats = document.querySelectorAll(".stat-number");
+    const chars = "#@!$%^&*()_+-=<>?|0123456789";
+
+    function chaoticScramble(element, finalValue) {
+        let current = "";
+        let frame = 0;
+
+        const digitLimit = finalValue.toString().length; // jumlah digit final
+        const maxFrames = 30 + Math.floor(Math.random() * 20);
+        const randomDelay = Math.random() * 800;
+
+        setTimeout(() => {
+            const interval = setInterval(() => {
+                frame++;
+
+                // scramble dibatasi sesuai jumlah digit angka final
+                let scrambleLength = Math.floor(Math.random() * digitLimit) + 1;
+
+                current = "";
+                for (let i = 0; i < scrambleLength; i++) {
+                    current += chars[Math.floor(Math.random() * chars.length)];
+                }
+
+                // Blink lebih sering
+                if (Math.random() < 0.55) {
+                    element.style.visibility = "hidden";
+                } else {
+                    element.style.visibility = "visible";
+                }
+
+                // Glitch mendekati akhir
+                if (frame > maxFrames - 8 && Math.random() < 0.6) {
+                    element.textContent = chars[Math.floor(Math.random() * chars.length)];
+                } else {
+                    element.textContent = current;
+                }
+
+                // selesai
+                if (frame >= maxFrames) {
+                    clearInterval(interval);
+                    element.style.visibility = "visible";
+                    element.textContent = finalValue;
+                }
+
+            }, 70 + Math.random() * 50);
+        }, randomDelay);
+    }
+
+    stats.forEach(stat => {
+        const target = stat.dataset.target || "0";
+        chaoticScramble(stat, target);
+    });
+});
+
+

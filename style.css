@@ -34,7 +34,7 @@ body::-webkit-scrollbar {
     padding-left: 260px;
     box-sizing: border-box;
     background-color: #000 !important; /* Warna latar belakang gelap untuk konten */
-    color: #fff;
+    color: #bfbfbf;
     font-family: 'Courier New', Courier, monospace;
     flex: 1;
 }
@@ -45,8 +45,7 @@ section {
 }
 
 h1, h2, h3 {
-    color: #fff; /* Teks judul putih */
-    font-weight: bold;
+    color: #bfbfbf; /* Teks judul putih */
 }
 
 
@@ -55,7 +54,7 @@ h1, h2, h3 {
 /* Navbar */
 .navbar {
     width: 250px;
-    background-color: #0b0b0b; /* Warna navbar hitam */
+    background-color: #000; /* Warna navbar hitam */
     color: #fff;
     height: 100%;
     position: fixed;
@@ -190,6 +189,81 @@ footer p {
 }
 
 
+
+
+
+/* Styling untuk bagian Bash Terminal */
+.bash {
+    background-color: #0a0a0a; /* Hitam untuk kesan terminal */
+    color: #fff; /* Teks putih untuk kontras yang baik */
+    font-family: "Courier New", monospace; /* Font terminal */
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 10px;
+    box-shadow: none; /* Menghapus bayangan */
+    text-align: left; /* Rata kiri untuk terminal */
+    line-height: 1.6;
+}
+
+.bash-header {
+    display: inline-block;
+    margin-bottom: 10; /* Menghapus margin bawah */
+    color: #bbb; /* Teks abu-abu untuk error */
+}
+
+.user-name {
+    color: #00ff00; /* Hijau untuk bmarz@MJ */
+}
+
+.shell {
+    color: #800080; /* Ungu untuk MINGW64 */
+}
+
+.current-directory {
+    color: #FFA500; /* Oranye untuk ~ */
+}
+
+.bash-body {
+    font-size: 16px;
+    color: #bfbfbf; /* Teks abu-abu untuk error */
+    white-space: pre-line; /* Menjaga format seperti terminal */
+    letter-spacing: 0.5px; /* Menambah jarak antar karakter untuk kesan terminal */
+    margin-bottom: 5px; /* Mengurangi jarak bawah */
+}
+
+.bash-prompt {
+    color: #00ff00; /* Hijau untuk tanda prompt (>) */
+    display: inline-block;
+    margin-right: 5px; /* Memberikan jarak setelah prompt */
+}
+
+.bash-command {
+    color: #bbb; /* Putih untuk command yang dimasukkan */
+    display: inline-block;
+    margin-left: 5px; /* Memberikan jarak sedikit agar lebih jelas */
+}
+
+.bash-body br {
+    display: inline-block; /* Menggunakan inline-block agar tidak ada spasi ekstra */
+}
+
+.bash-body span {
+    display: inline-block;
+    margin-bottom: 0; /* Menghapus margin bawah */
+}
+
+.bash-body .bash-prompt {
+    margin-right: 10px; /* Memberikan sedikit jarak agar prompt lebih terlihat terpisah dari teks */
+}
+
+a {
+    color: inherit; /* Menghapus warna biru link dan mengikuti warna teks default */
+    text-decoration: none; /* Menghapus garis bawah pada link */
+}
+
+
+
+
 /* CSS untuk efek mengetik */
 #dynamic-text {
     display: inline-block;
@@ -225,34 +299,51 @@ footer p {
 
 
 /* Styling untuk bagian Cyber Stats */
-.cyber-stats {
-    display: flex;
-    flex-direction: row; /* Menyusun elemen secara horizontal */
-    justify-content: space-evenly; /* Memberikan jarak yang sama antar item */
-    align-items: center; /* Menyelaraskan elemen secara vertikal di tengah */
-    margin-top: 50px; /* Memberikan jarak dari elemen sebelumnya */
-    margin-bottom: 50px; /* Memberikan jarak ke elemen berikutnya */
-}
+    .cyber-stats {
+        display: flex;
+        flex-direction: row; /* Menyusun elemen secara horizontal */
+        justify-content: space-evenly; /* Memberikan jarak yang sama antar item */
+        align-items: center; /* Menyelaraskan elemen secara vertikal di tengah */
+        margin-top: 50px; /* Memberikan jarak dari elemen sebelumnya */
+        margin-bottom: 50px; /* Memberikan jarak ke elemen berikutnya */
+    }
 
-.stat-item {
-    font-family: 'Courier New', Courier, monospace; /* Font monospace untuk kesan terminal */
-    color: #00ff00; /* Warna hijau cyber */
-    font-size: 18px;
-    text-align: center;
-}
+    .stat-item {
+        font-family: 'Courier New', Courier, monospace; /* Font monospace untuk kesan terminal */
+        color: #00ff00; /* Warna hijau cyber */
+        font-size: 18px;
+        text-align: center;
+    }
 
-.stat-number {
-    font-size: 32px; /* Ukuran besar untuk angka */
-    font-weight: bold;
-    color: #00ff00; /* Hijau terang */
-}
+    .stat-number {
+        font-family: 'Courier New', monospace;  
+        font-size: 32px; /* Ukuran besar untuk angka */
+        color: #00ff00;
+        position: relative;
+        display: inline-block;
+        min-width: 40px;     /* agar tidak melebar saat scramble */
+        min-height: 38px;    /* kunci tinggi */
+        line-height: 38px;   /* biar center */
+    }
 
-.stat-label {
-    font-size: 14px; /* Ukuran kecil untuk label */
-    color: #bbb; /* Warna abu-abu untuk label */
-    display: block;
-    margin-top: 5px;
-}
+    .stat-label {
+        font-size: 14px; /* Ukuran kecil untuk label */
+        color: #bbb; /* Warna abu-abu untuk label */
+        display: block;
+        margin-top: 5px;
+    }
+
+    /* Efek glitch */
+    .stat-number.glitch {
+        animation: glitch 0.12s infinite;
+    }
+
+    @keyframes glitch {
+        0% { text-shadow: 2px 0 #00ff00, -2px 0 #007700; }
+        50% { text-shadow: -2px 0 #00ff00, 2px 0 #007700; }
+        100% { text-shadow: 1px 0 #00ff00, -1px 0 #007700; }
+    }
+
 
 
 
@@ -365,74 +456,6 @@ footer p {
 
 
 
-/* Styling untuk bagian Bash Terminal */
-.bash {
-    background-color: #0a0a0a; /* Hitam untuk kesan terminal */
-    color: #fff; /* Teks putih untuk kontras yang baik */
-    font-family: "Courier New", monospace; /* Font terminal */
-    border-radius: 8px;
-    padding: 20px;
-    margin-top: 10px;
-    box-shadow: none; /* Menghapus bayangan */
-    text-align: left; /* Rata kiri untuk terminal */
-    line-height: 1.6;
-}
-
-.bash-header {
-    display: inline-block;
-    margin-bottom: 10; /* Menghapus margin bawah */
-    color: #bbb; /* Teks abu-abu untuk error */
-}
-
-.user-name {
-    color: #00ff00; /* Hijau untuk bmarz@MJ */
-}
-
-.shell {
-    color: #800080; /* Ungu untuk MINGW64 */
-}
-
-.current-directory {
-    color: #FFA500; /* Oranye untuk ~ */
-}
-
-.bash-body {
-    font-size: 16px;
-    color: #bfbfbf; /* Teks abu-abu untuk error */
-    white-space: pre-line; /* Menjaga format seperti terminal */
-    letter-spacing: 0.5px; /* Menambah jarak antar karakter untuk kesan terminal */
-    margin-bottom: 5px; /* Mengurangi jarak bawah */
-}
-
-.bash-prompt {
-    color: #00ff00; /* Hijau untuk tanda prompt (>) */
-    display: inline-block;
-    margin-right: 5px; /* Memberikan jarak setelah prompt */
-}
-
-.bash-command {
-    color: #bbb; /* Putih untuk command yang dimasukkan */
-    display: inline-block;
-    margin-left: 5px; /* Memberikan jarak sedikit agar lebih jelas */
-}
-
-.bash-body br {
-    display: inline-block; /* Menggunakan inline-block agar tidak ada spasi ekstra */
-}
-
-.bash-body span {
-    display: inline-block;
-    margin-bottom: 0; /* Menghapus margin bawah */
-}
-
-.bash-body .bash-prompt {
-    margin-right: 10px; /* Memberikan sedikit jarak agar prompt lebih terlihat terpisah dari teks */
-}
-
-a {
-    color: inherit; /* Menghapus warna biru link dan mengikuti warna teks default */
-    text-decoration: none; /* Menghapus garis bawah pada link */
-}
 
 
 
@@ -448,8 +471,8 @@ a {
 
 /* Project Folder Styling */
 .project-folder {
-    background-color: #1c1c1c; /* Dark background */
-    border: 1px solid #333; /* Lighter border */
+    background-color: #0a0a0a; /* Dark background */
+    border: 1px solid #1c1c1c; /* Lighter border */
     border-radius: 8px;
     padding: 20px;
     cursor: pointer;
