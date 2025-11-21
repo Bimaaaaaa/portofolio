@@ -55,20 +55,23 @@
     /* Navbar */
     .navbar {
         width: 250px;
-        background-color: #000; /* Warna navbar hitam */
+        background-color: #000;
         color: #fff;
-        height: 100%;
         position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0; /* tinggi full layar */
         padding-top: 20px;
-        padding-left: 40px;
+        padding-left: 20px;
         font-size: 16px;
         font-family: 'Courier New', Courier, monospace;
-        display: flex;  /* Menggunakan flexbox */
-        flex-direction: column;  /* Menyusun elemen secara vertikal */
-        align-items: flex-start; /* Menyelaraskan elemen ke kiri */
-        outline: none;
-        box-shadow: none;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        box-sizing: border-box;
+        overflow-y: auto; /* scroll jika konten tinggi */
     }
+
 
     .navbar img {
         width: 110px;
@@ -189,6 +192,8 @@
         margin-top: 20px;
     }
 
+
+    
 
 
     /* Styling untuk bagian Bash Terminal */
@@ -316,7 +321,8 @@
 
         .stat-number {
             font-family: 'Courier New', monospace;  
-            font-size: 32px; /* Ukuran besar untuk angka */
+            font-size: 25px; /* Ukuran besar untuk angka */
+            font-weight: bold;
             color: #00ff00;
             position: relative;
             display: inline-block;
@@ -334,7 +340,7 @@
 
         /* Efek glitch */
         .stat-number.glitch {
-            animation: glitch 0.12s infinite;
+            animation: glitch 0.7s infinite;
         }
 
         @keyframes glitch {
@@ -748,10 +754,12 @@
     /* About section */
     .about-section {
         display: block; /* pastikan block */
-        background-color: #1e1e1e; /* monokrom gelap */
-        color: #e0e0e0; /* teks terang agar terbaca */
+        background-color: #0a0a0a; /* monokrom gelap */
+        border: 1px solid #1c1c1c; /* Lighter border */
+        border: 1px solid #1c1c1c; /* Lighter border */
+        color: #bbb; /* teks terang agar terbaca */
         padding: 60px 20px;
-        margin: 0 auto;
+        margin-top: 1px ;
         border-radius: 10px;
         width: 100%;
         max-width: 100vw; /* jangan melebihi layar */
@@ -774,7 +782,8 @@
         display: block;
         width: 100%;
         text-align: center;
+        margin-top: 1px;
         margin-bottom: 30px;
-        color: #00ff99; /* bisa diganti sesuai tema */
+        color: #ddd; /* bisa diganti sesuai tema */
     }
 
