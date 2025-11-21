@@ -18,11 +18,11 @@
     position: absolute;
     width: 380px;
     padding: 18px;
-    background: rgba(0,0,0,0.9);
-    border: 1px solid #0f0;
-    color: #0f0;
+    background: #0a0a0a;
+    border: 1px solid #1c1c1c;
+    color: #bbb;
     font-family: "Courier New", monospace;
-    box-shadow: 0 0 18px rgba(0, 255, 0, 0.8);
+    /* box-shadow: 0 0 18px rgba(0, 255, 0, 0.8); */
     border-radius: 8px;
     opacity: 0;
     transform: scale(0.8);
@@ -32,8 +32,8 @@
 .loader-box.hide { opacity: 0; transform: scale(0.6); }
 
 .loader-digits { height: 60px; overflow: hidden; font-size: 18px; margin-bottom: 10px; }
-.progress-bar { width: 100%; height: 6px; background: rgba(0,255,0,0.25); border-radius: 6px; }
-.progress-fill { height: 6px; width: 0%; background: #0f0; transition: width .2s linear; }
+.progress-bar { width: 100%; height: 6px; background: rgba(255, 255, 255, 0.25); border-radius: 6px; }
+.progress-fill { height: 6px; width: 0%; background: rgba(255, 255, 255, 1); transition: width .2s linear; }
 </style>
 
 <script>
@@ -119,6 +119,18 @@ document.addEventListener("DOMContentLoaded", function () {
         let val = Math.max(0, Math.min(100, Math.floor(Math.random()*130)-20));
         bar.style.width = val + "%";
     }
+
+
+    // loop untuk update angka
+    setInterval(() => {
+        loaderQueue.forEach(box => {
+            if (!chaosActive) return;
+            const digits = box.querySelector(".loader-digits");
+            randomDigits(digits);
+        });
+    }, 120); // update tiap 120ms, bisa diubah lebih cepat/lambat
+
+
 
     // chaos loop
     setInterval(() => {
