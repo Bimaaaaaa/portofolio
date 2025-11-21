@@ -79,9 +79,8 @@ changeText();
     }
 
 
-//moving tools
+// SLIDER TOOLS
 (function(){
-  // Utility: waitForLoad then init
   window.addEventListener('load', () => {
     initAllSliders();
   });
@@ -94,54 +93,57 @@ changeText();
     const container = slider.querySelector('.tools-container');
     if(!container) return;
 
-    // create track wrapper and move original container inside it
     const track = document.createElement('div');
     track.className = 'slider-track';
     slider.insertBefore(track, container);
     track.appendChild(container);
 
-    // measure base width (after layout)
-    const baseWidth = container.getBoundingClientRect().width;
+    let clones = [];
+    let baseWidth;
 
-    // clone until track scrollWidth >= baseWidth * 3 (safety)
-    // ensures for both left/right directions the transition won't show empty gap
-    let safety = 0;
-    while (track.scrollWidth < baseWidth * 3 && safety < 30) {
-      const c = container.cloneNode(true);
-      track.appendChild(c);
-      safety++;
+    function rebuildClones() {
+      // Hapus semua clone dulu
+      clones.forEach(c => c.remove());
+      clones = [];
+      track.innerHTML = '';
+      track.appendChild(container);
+
+      baseWidth = container.getBoundingClientRect().width;
+      const viewportWidth = slider.offsetWidth;
+
+      // Tambahkan clone sampai track cukup panjang (lebih aman: total >= 5x viewport)
+      let safety = 0;
+      while(track.scrollWidth < viewportWidth * 5 && safety < 50){
+        const clone = container.cloneNode(true);
+        track.appendChild(clone);
+        clones.push(clone);
+        safety++;
+      }
     }
 
-    // read config from data- attributes (pixels per second)
-    const speedPxPerSec = Number(slider.dataset.speed) || 120; // px/s
-    const direction = (slider.dataset.direction === 'right') ? 'right' : 'left';
+    rebuildClones();
 
-    // initial pos: left -> 0, right -> -baseWidth (so clones cover left side)
-    let pos = (direction === 'left') ? 0 : -baseWidth;
+    const speedPxPerSec = Number(slider.dataset.speed) || 120;
+    const direction = slider.dataset.direction === 'right' ? 'right' : 'left';
+    let pos = direction === 'left' ? 0 : -baseWidth;
     let lastTime = null;
     let running = true;
 
-    // pause when hovering slider area
-    slider.addEventListener('mouseenter', () => { running = false; });
-    slider.addEventListener('mouseleave', () => { running = true; });
+    slider.addEventListener('mouseenter', ()=> running=false);
+    slider.addEventListener('mouseleave', ()=> running=true);
 
     function step(timestamp){
-      if (!lastTime) lastTime = timestamp;
-      const dt = (timestamp - lastTime) / 1000;
+      if(!lastTime) lastTime = timestamp;
+      const dt = (timestamp - lastTime)/1000;
       lastTime = timestamp;
 
-      if (running) {
-        const delta = speedPxPerSec * dt * (direction === 'left' ? -1 : 1);
+      if(running){
+        const delta = speedPxPerSec * dt * (direction==='left' ? -1 : 1);
         pos += delta;
 
-        // reset logic using baseWidth
-        if (direction === 'left') {
-          // as pos goes negative, when it passed -baseWidth add baseWidth (wrap)
-          if (pos <= -baseWidth) pos += baseWidth;
-        } else {
-          // moving right: pos increases from -baseWidth towards 0; when >= 0 subtract baseWidth
-          if (pos >= 0) pos -= baseWidth;
-        }
+        // wrap
+        if(direction==='left' && pos <= -baseWidth) pos += baseWidth;
+        if(direction==='right' && pos >= 0) pos -= baseWidth;
 
         track.style.transform = `translateX(${pos}px)`;
       }
@@ -150,9 +152,20 @@ changeText();
     }
 
     requestAnimationFrame(step);
-  }
 
+    // rebuild clones saat resize/zoom
+    let resizeTimeout;
+    window.addEventListener('resize', ()=>{
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(()=>{
+        rebuildClones();
+        pos = direction === 'left' ? 0 : -baseWidth;
+        track.style.transform = `translateX(${pos}px)`;
+      }, 200);
+    });
+  }
 })();
+
 
 
 
