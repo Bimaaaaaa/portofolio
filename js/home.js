@@ -64,16 +64,19 @@ changeText();
 
 
 
-// JavaScript to toggle folder content visibility
-function toggleFolder(folder) {
-    const content = folder.querySelector('.folder-content');
-    // Toggle the max-height to allow smooth opening and closing
-    if (content.style.maxHeight) {
-        content.style.maxHeight = null; // Close it
-    } else {
-        content.style.maxHeight = content.scrollHeight + "px"; // Open it
+    function toggleFolder(folder) {
+        const content = folder.querySelector('.folder-content');
+
+        // Toggle the "open" class to open or close the folder
+        folder.classList.toggle('open');
+
+        // Cek apakah folder sudah terbuka, jika iya, tutup, jika tidak buka
+        if (folder.classList.contains('open')) {
+            content.style.maxHeight = content.scrollHeight + "px"; // Membuka folder
+        } else {
+            content.style.maxHeight = null; // Menutup folder
+        }
     }
-}
 
 
 //moving tools
