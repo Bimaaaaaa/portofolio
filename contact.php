@@ -19,7 +19,7 @@
     </div>
     <div class="contact-item">
         <i class="fab fa-github"></i>
-        <p><strong>GitHub:</strong> <a href="https://github.com/Bimaaaaaa" target="_blank">github.com/Bimaaaaaa</a></p>
+        <p><strong>GitHub:</strong> <a href="https://github.com/bmarzky" target="_blank">github.com/Bimaaaaaa</a></p>
     </div>
 
     <!-- Right Column (WhatsApp and LinkedIn) -->
