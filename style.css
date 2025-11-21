@@ -7,7 +7,7 @@
 
     body {
         font-family: 'Courier New', Courier, monospace; /* Font terminal */
-        background-color: #000 !important; /* Latar belakang hitam */
+        background-color: #000000 !important; /* Latar belakang hitam */
         color: #fff; /* Teks putih */
         display: flex;
         flex-direction: column;
@@ -33,7 +33,7 @@
         padding: 20px;
         padding-left: 260px;
         box-sizing: border-box;
-        background-color: #000 !important; /* Warna latar belakang gelap untuk konten */
+        background-color: #000000 !important; /* Warna latar belakang gelap untuk konten */
         color: #bfbfbf;
         font-family: 'Courier New', Courier, monospace;
         flex: 1;
@@ -198,16 +198,17 @@
 
     /* Styling untuk bagian Bash Terminal */
     .bash {
-        background-color: #0a0a0a; /* Hitam untuk kesan terminal */
-        border: 1px solid #1c1c1c; /* Lighter border */
-        font-family: "Courier New", monospace; /* Font terminal */
+        background-color: rgba(10, 10, 10, 0.6);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 0 10px rgba(255,255,255,0.05);
+        font-family: "Courier New", monospace;
         border-radius: 8px;
         padding: 20px;
-        box-shadow: none; /* Menghapus bayangan */
-        text-align: left; /* Rata kiri untuk terminal */
+        text-align: left;
         line-height: 1.6;
-        font-weight: bold;
     }
+
+
 
     .bash-header {
         display: inline-block;
@@ -228,7 +229,7 @@
     }
 
     .bash-body {
-        font-size: 16px;
+        font-size: 14px;
         color: #bfbfbf; /* Teks abu-abu untuk error */
         white-space: pre-line; /* Menjaga format seperti terminal */
         letter-spacing: 0.5px; /* Menambah jarak antar karakter untuk kesan terminal */
@@ -273,12 +274,13 @@
         display: inline-block;
         color: #bbb; 
         font-size: 1rem; /* ukuran lebih kecil seperti bash */
-        font-family: 'Fira Mono', 'Courier Prime', 'Courier', monospace; /* font monospace */
+        font-family: "Courier New", monospace; /* Font terminal */
         white-space: nowrap;
         overflow: hidden;
         border-right: 2px solid #bbb; /* efek cursor berkedip */
         width: auto; /* lebar otomatis mengikuti teks */
         animation: typing 4s steps(30, end), blink-caret 0.75s step-end infinite;
+        font-size: 14px;
     }
         
 
@@ -309,7 +311,7 @@
             justify-content: space-evenly; /* Memberikan jarak yang sama antar item */
             align-items: center; /* Menyelaraskan elemen secara vertikal di tengah */
             margin-top: 25px; /* Memberikan jarak dari elemen sebelumnya */
-            margin-bottom: 25px; /* Memberikan jarak ke elemen berikutnya */
+            margin-bottom: 35px; /* Memberikan jarak ke elemen berikutnya */
         }
 
         .stat-item {
@@ -362,7 +364,7 @@
         font-family: 'Courier New', monospace;
         font-size: 20px;
         text-align: left;
-        margin-bottom: 20px;    /* jarak bawah */      /* jarak atas */
+        margin-bottom: 5px;    /* jarak bawah */      /* jarak atas */
         letter-spacing: 1px;
     }
 
@@ -754,9 +756,9 @@
     /* About section */
     .about-section {
         display: block; /* pastikan block */
-        background-color: #0a0a0a; /* monokrom gelap */
-        border: 1px solid #1c1c1c; /* Lighter border */
-        border: 1px solid #1c1c1c; /* Lighter border */
+        background-color: rgba(10, 10, 10, 0.6);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 0 10px rgba(255,255,255,0.05);
         color: #bbb; /* teks terang agar terbaca */
         padding: 60px 20px;
         margin-top: 1px ;

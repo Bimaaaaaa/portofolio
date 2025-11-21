@@ -7,7 +7,7 @@
                 </div>
                 <div class="bash-body">
                     <span class="user-name">bmarz@MJ</span> <span class="shell">MINGW64</span> <span class="current-directory">~</span>
-                    $ Let's Collaborate!
+                    $ Behind Every Firewall Lies Another Vulnerability Waiting to Awaken!
                     > ^C
 
                     <span class="user-name">bmarz@MJ</span> <span class="shell">MINGW64</span> <span class="current-directory">~</span>
@@ -70,7 +70,7 @@
                 <div class="tool-card"><img src="assets/images/icons/snort.png">Snort</div>
                 <div class="tool-card"><img src="assets/images/icons/openvas.png">OpenVAS</div>
                 <div class="tool-card"><img src="assets/images/icons/maltego.png">Maltego</div>
-                <div class="tool-card"><img src="assets/images/icons/volatility.png">Volatility</div>
+                <div class="tool-card"><img src="assets/images/icons/rubeus.svg">Rubeus</div>
                 </div>
             </div>
             </div>

@@ -52,10 +52,7 @@
     </div>
 </div>
 
-<?php include('includes/footer.php'); ?>
+<?php include('includes/loader.php'); ?>
 
 <!-- Link ke file JavaScript -->
 <script src="js/home.js"></script>
-<script>
-
-</script>

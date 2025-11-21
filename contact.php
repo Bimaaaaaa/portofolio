@@ -38,6 +38,6 @@
     </div>
 </div>
 
-<?php include('includes/footer.php'); ?>
-
-<script src="https://kit.fontawesome.com/a076d05399.js"></script> <!-- FontAwesome for Icons -->
+<?php include('includes/loader.php'); ?>
+<script src="js/home.js"></script>
+<!-- <script src="https://kit.fontawesome.com/a076d05399.js"></script> FontAwesome for Icons -->

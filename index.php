@@ -11,7 +11,8 @@
     </div>
 </div>
 
-<?php include('includes/footer.php'); ?>
+
 
 <!-- Link ke file JavaScript -->
 <script src="js/home.js"></script>
+<?php include('includes/loader.php'); ?>
