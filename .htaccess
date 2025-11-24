@@ -1,6 +1,14 @@
+# Enable rewrite
 RewriteEngine On
 
 # Hilangkan .php dari URL
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.php -f
 RewriteRule ^([^/]+)$ $1.php [L]
+
+# Tampilkan PDF di browser
+<FilesMatch "\.pdf$">
+    ForceType application/pdf
+    Header set Content-Disposition "inline"
+</FilesMatch>
+    

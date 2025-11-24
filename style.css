@@ -212,7 +212,7 @@
 
     .bash-header {
         display: inline-block;
-        margin-bottom: 5; /* Menghapus margin bawah */
+        margin-bottom: 5px; /* Menghapus margin bawah */
         color: #bbb; /* Teks abu-abu untuk error */
     }
 
@@ -268,38 +268,30 @@
 
 
 
+#dynamic-text {
+    color: #bbb;
+    font-family: "Courier New", monospace;
+    white-space: nowrap;
+    font-size: 14px;
+    line-height: 18px; /* pastikan line-height sesuai tinggi font */
+}
 
-    /* CSS untuk efek mengetik */
-    #dynamic-text {
-        display: inline-block;
-        color: #bbb; 
-        font-size: 1rem; /* ukuran lebih kecil seperti bash */
-        font-family: "Courier New", monospace; /* Font terminal */
-        white-space: nowrap;
-        overflow: hidden;
-        border-right: 2px solid #bbb; /* efek cursor berkedip */
-        width: auto; /* lebar otomatis mengikuti teks */
-        animation: typing 4s steps(30, end), blink-caret 0.75s step-end infinite;
-        font-size: 14px;
-    }
-        
+.cursor {
+    display: inline-block;
+    width: 2px;
+    height: 14px;              /* sama dengan line-height */
+    background-color: #bbb;
+    margin-left: 2px;
+    vertical-align: middle;     /* pastikan sejajar dengan teks */
+    animation: blink 1s step-start infinite;
+}
 
-    /* Animasi untuk mengetik */
-    @keyframes typing {
-        0% {
-            width: 0;
-        }
-        100% {
-            width: 100%; /* Memastikan teks mengisi lebar penuh */
-        }
-    }
+@keyframes blink {
+    0%, 50%, 100% { opacity: 1; }
+    25%, 75% { opacity: 0; }
+}
 
-    /* Animasi untuk cursor berkedip */
-    @keyframes blink-caret {
-        50% {
-            border-color: transparent;
-        }
-    }
+
 
 
 
@@ -789,3 +781,238 @@
         color: #ddd; /* bisa diganti sesuai tema */
     }
 
+
+
+
+/* ===========================================
+   GLOBAL ABOUT PAGE LAYOUT
+=========================================== */
+#about-page .about-title {
+    text-align: left;
+}
+
+#about-page .about-title h1 {
+    font-size: 38px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 6px;
+}
+
+#about-page .about-title h5 {
+    font-size: 15px;
+    font-weight: 300;
+    color: #ddd;
+    margin-bottom: 35px;
+}
+
+/* ===========================================
+   TAB MENU
+=========================================== */
+#about-page .tab-menu {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    background-color: rgba(10, 10, 10, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 10px rgba(255,255,255,0.05);
+    padding: 5px 20px;
+    border-radius: 14px;
+    margin: 0 auto 10px;
+    backdrop-filter: blur(4px);
+}
+
+/* Tab Slider */
+#about-page .tab-slider {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 0;
+    height: 34px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 12px;
+    transform: translateY(-50%);
+    transition: all 0.35s ease;
+    z-index: 0;
+}
+
+/* Tab Buttons */
+#about-page .tab-btn {
+    padding: 10px 22px;
+    background: transparent;
+    color: #ccc;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    border-radius: 12px;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.3s ease;
+}
+
+#about-page .tab-btn.active {
+    color: #fff;
+}
+
+#about-page .tab-btn .tab-icon {
+    font-size: 16px;
+    color: #fff;
+    opacity: 0.8;
+    transition: 0.2s;
+}
+
+#about-page .tab-btn:hover .tab-icon,
+#about-page .tab-btn.active .tab-icon {
+    opacity: 1;
+}
+
+/* ===========================================
+   TAB CONTENT FRAME
+=========================================== */
+#about-page .tab-content-frame {
+    background-color: rgba(10, 10, 10, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 10px rgba(255,255,255,0.05);
+    font-family: "Courier New", monospace;
+    border-radius: 12px;
+    padding: 25px;
+    backdrop-filter: blur(3px);
+}
+
+/* Tab Content */
+#about-page .tab-content {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-40px);
+    transition: opacity 0.35s ease, transform 0.35s ease, visibility 0s linear 0.35s;
+}
+
+#about-page .tab-content.active {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+    transition-delay: 0s;
+}
+
+#about-page .tab-content h2 {
+    font-size: 26px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+#about-page .tab-content p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #ccc;
+    margin-bottom: 15px;
+}
+
+#about-page .highlight {
+    color: #ccc;
+    font-weight: 600;
+}
+
+/* ===========================================
+   EDUCATION SECTION
+=========================================== */
+#about-page .edu-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#about-page .edu-card {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    border-radius: 12px;
+    padding: 15px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+#about-page .edu-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(255,255,255,0.07);
+}
+
+#about-page .edu-card img {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+#about-page .edu-info h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+#about-page .edu-info p,
+#about-page .edu-info span {
+    color: #bbb;
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+#about-page .edu-info span {
+    font-size: 13px;
+    color: #aaa;
+}
+
+#about-page .edu-info p i,
+#about-page .edu-info span i {
+    color: #bbb;
+    font-size: 10px;
+    margin-right: 4px;
+}
+
+/* ===========================================
+   RESUME PREVIEW & DOWNLOAD
+=========================================== */
+
+/* Hanya untuk tab Resume */
+/* Wrapper flex untuk centering */
+#resume .resume-iframe-wrapper {
+    display: flex;
+    justify-content: center; /* horizontal center */
+    margin-top: 20px;        /* opsional, jarak dari header */
+}
+
+/* Iframe styling */
+#resume .resume-iframe-wrapper iframe {
+    width: 70%;        /* lebar iframe */
+    height: 1150px;     /* tinggi iframe */
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+
+
+.download-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 15px;
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: 0.3s;
+}
+
+.download-btn i {
+    margin-right: 5px;
+}
+
+.download-btn:hover {
+    background: rgba(255,255,255,0.2);
+    transform: translateY(-2px);
+}

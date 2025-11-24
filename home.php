@@ -3,7 +3,7 @@
 
             <div class="bash">
                 <div class="bash-header">
-                    <span id="dynamic-text"></span>
+                    <span id="dynamic-text"></span><span class="cursor"></span>
                 </div>
                 <div class="bash-body">
                     <span class="user-name">bmarz@MJ</span> <span class="shell">MINGW64</span> <span class="current-directory">~</span>
