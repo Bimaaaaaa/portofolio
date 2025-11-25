@@ -3,7 +3,7 @@
 <?php 
 // Redirect ke halaman maintenance jika page belum siap
 
-$page_under_construction = true; // ubah jadi false jika halaman sudah siap
+$page_under_construction = false; // ubah jadi false jika halaman sudah siap
 
 if ($page_under_construction) {
     header("Location: maintenance");
