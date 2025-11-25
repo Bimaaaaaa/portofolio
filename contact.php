@@ -1,5 +1,16 @@
 <?php include('includes/header.php'); ?>
 
+<?php 
+// Redirect ke halaman maintenance jika page belum siap
+
+$page_under_construction = true; // ubah jadi false jika halaman sudah siap
+
+if ($page_under_construction) {
+    header("Location: maintenance");
+    exit();
+}
+?>
+
 <div class="container">
     <div class="navbar">
         <?php include('includes/navbar.php'); ?>
