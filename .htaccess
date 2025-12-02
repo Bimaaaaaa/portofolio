@@ -1,5 +1,5 @@
 RewriteEngine On
-RewriteBase /portofolio2/
+RewriteBase /portofolio3/
 
 # Izinkan folder static (wajib di atas)
 RewriteRule ^(assets|css|js|images|vendor)/ - [L]
