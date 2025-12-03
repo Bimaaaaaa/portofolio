@@ -1,7 +1,4 @@
-/* ==============================
-   CONTACT SECTION WRAPPER
-============================== */
-/* Contact section tetap punya max-width */
+/* Contact Section */
 .contact-section {
     margin-top: 20px;
     max-width: 1240px;
@@ -14,7 +11,6 @@
     box-sizing: border-box;
 }
 
-/* Title */
 .contact-section h2 {
     font-size: 25px;
     margin-bottom: 5px;
@@ -28,14 +24,60 @@
     font-weight: 400;
 }
 
-/* GRID CONTACT ITEMS */
+/* Password Input */
+.contact-pass-box {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    max-width: 400px;
+}
+
+.contact-pass-box input {
+    flex: 2;
+    padding: 8px 10px;
+    border-radius: 6px;
+    border: 1px solid rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.05);
+    color: #fff;
+    font-size: 0.95rem;
+}
+
+.contact-pass-btn {
+    flex: 1;
+    padding: 8px 12px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 6px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 0.95rem;
+    transition: 0.2s;
+}
+
+.contact-pass-btn:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+#contact-status {
+    margin-top: 5px;
+    font-size: 0.85rem;
+    color: #f55;
+}
+
+/* Contact Grid */
 .contact-info {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 18px;
+    visibility: hidden;
 }
 
-/* CONTACT CARD */
+.contact-info.show {
+    visibility: visible;
+}
+
+/* Contact Item */
 .contact-item {
     display: flex;
     align-items: flex-start;
@@ -44,28 +86,21 @@
     background: rgba(255,255,255,0.03);
     border-radius: 10px;
     border: 1px solid rgba(255,255,255,0.06);
-
-    transition: 
-        transform 0.25s ease,
-        border-color 0.25s ease,
-        box-shadow 0.25s ease;
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* CYBER HOVER EFFECT */
 .contact-item:hover {
     transform: translateY(-6px);
-    border-color: #ffff;
+    border-color: #fff;
     box-shadow: 0 0 10px rgba(255,255,255,0.05);
 }
 
-/* ICON STYLE */
 .contact-item i {
     font-size: 2rem;
-    color: #bbbb;
+    color: #bbb;
     min-width: 40px;
 }
 
-/* TEXT BLOCK */
 .contact-text strong {
     font-size: 1.15rem;
     letter-spacing: .5px;
@@ -80,63 +115,53 @@
 }
 
 .contact-text a:hover {
-    color: #ffff;
+    color: #fff;
 }
 
-/* MOBILE BREAKPOINT */
+/* Tablet */
 @media (max-width: 768px) {
     .contact-section {
         padding: 20px;
-        max-width: 90%;   /* agar tidak terlalu mepet pinggir layar */
+        max-width: 90%;
         margin-left: auto;
-        margin-right: auto;  /* pastikan tetap center */
+        margin-right: auto;
     }
-
     .contact-info {
         grid-template-columns: 1fr;
     }
-
     .contact-item {
         padding: 16px;
     }
-
     .contact-section h2 {
         font-size: 2rem;
     }
-
     .contact-section h3 {
         font-size: 1.1rem;
     }
 }
 
-/* EXTRA SMALL DEVICES - HP kecil (max-width: 480px) */
+/* Mobile */
 @media (max-width: 480px) {
-
     .contact-section {
         max-width: 100%;
-        padding: 16px;       /* kecilkan padding supaya tidak overflow */
+        padding: 16px;
     }
-
     .contact-info {
-        gap: 10px;           /* mengurangi jarak antar kartu */
+        gap: 10px;
     }
-
     .contact-item {
-        padding: 14px;       /* kecilkan padding dalam kartu */
-        gap: 10px;           /* jarak icon dan teks lebih rapat */
+        padding: 14px;
+        gap: 10px;
     }
-
     .contact-item i {
-        font-size: 1.5rem;   /* icon lebih kecil */
-        min-width: 28px;     /* kurangi agar tidak mendorong teks keluar */
+        font-size: 1.5rem;
+        min-width: 28px;
     }
-
     .contact-text strong {
-        font-size: 1rem;     /* per kecil agar muat */
+        font-size: 1rem;
     }
-
     .contact-text a {
         font-size: 0.9rem;
-        word-break: break-word;   /* cegah teks keluar card */
+        word-break: break-word;
     }
 }

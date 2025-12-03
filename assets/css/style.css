@@ -1,32 +1,22 @@
-/* ==============================
-   GLOBAL RESET
-============================== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/** RESET **/
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-    background: #000000;
+    background: #000;
     color: #fff;
     font-family: "Courier New", monospace;
-    overflow-x: hidden; /* hilangkan scroll horizontal */
+    overflow-x: hidden;
 }
 
-/* Global: sembunyikan scrollbar, tapi scroll tetap berfungsi */
+/** Hide scrollbar but keep scroll **/
 html {
-    overflow: auto;            /* scroll tetap aktif */
-    -ms-overflow-style: none;  /* IE & Edge */
-    scrollbar-width: none;     /* Firefox */
+    overflow: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
+html::-webkit-scrollbar { display: none; }
 
-html::-webkit-scrollbar {
-    display: none;             /* Chrome, Safari, Opera */
-}
-
-
-/* FULL SCREEN MODE (menghapus layout desktop sepenuhnya) */
+/** FULL SCREEN MODE **/
 .full-screen-layout {
     width: 100vw !important;
     height: 100vh !important;
@@ -34,27 +24,16 @@ html::-webkit-scrollbar {
     padding: 0 !important;
     display: block !important;
 }
+.full-screen-layout * { max-width: 100% !important; }
+body.full-screen { display: block !important; }
 
-.full-screen-layout * {
-    max-width: 100% !important;
-}
-
-/* Hilangkan efek layout grid atau flex utama */
-body.full-screen {
-    display: block !important;
-}
-
-
-/* ==============================
-   SIDEBAR DESKTOP
-============================== */
+/** SIDEBAR (Desktop) **/
 .sidebar {
     width: 260px;
-    background: #000000;
+    background: #000;
     height: 100vh;
     position: fixed;
-    top: 0;
-    left: 0;
+    top: 0; left: 0;
     padding: 25px;
     transition: .3s;
     z-index: 2000;
@@ -68,8 +47,7 @@ body.full-screen {
 }
 
 .sidebar .profile img {
-    width: 70px;
-    height: 70px;
+    width: 70px; height: 70px;
     border-radius: 50%;
     object-fit: cover;
 }
@@ -82,13 +60,12 @@ body.full-screen {
 
 .sidebar .profile .text-info h3 {
     font-size: 19px;
-    margin: 0;
 }
 
 .sidebar .profile .text-info p {
     font-size: 13px;
     opacity: 0.7;
-    margin: 3px 0 0 0;
+    margin-top: 3px;
 }
 
 .sidebar .menu a {
@@ -114,15 +91,12 @@ body.full-screen {
     background: rgba(255,255,255,0.12);
     color: #fff;
 }
-
-.sidebar .menu a:hover i {
-    opacity: 1;
-}
+.sidebar .menu a:hover i { opacity: 1; }
 
 .burger {
     background: none;
     border: none;
-    color: white;
+    color: #fff;
     font-size: 26px;
     cursor: pointer;
     padding: 6px;
@@ -131,29 +105,21 @@ body.full-screen {
     justify-content: center;
 }
 
-/* ==============================
-   TOPBAR MOBILE
-============================== */
+/** TOPBAR (Mobile) **/
 @media (max-width: 900px) {
-
     .sidebar {
         transform: translateX(-100%);
         width: 240px;
         background: #0c0c0c;
         z-index: 9999;
     }
-
-    .sidebar.open {
-        transform: translateX(0);
-    }
+    .sidebar.open { transform: translateX(0); }
 
     .topbar-mobile {
         position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 70px;
-        background: #000000;
+        top: 0; left: 0;
+        width: 100%; height: 70px;
+        background: #000;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -175,42 +141,35 @@ body.full-screen {
 }
 
 @media (min-width: 901px) {
-    .topbar-mobile {
-        display: none !important;
-    }
+    .topbar-mobile { display: none !important; }
 }
 
-/* ==============================
-   MAIN CONTENT
-============================== */
+/** MAIN CONTENT **/
 .main-content {
     display: flex;
-    justify-content: center; /* center horizontal */
-    flex-direction: column;  /* kalau ada beberapa section */
-    margin-left: 260px;      /* offset sidebar di desktop */
-    padding: 20px;
-    box-sizing: border-box;
-    max-width: 1200px; /* bisa sesuaikan */
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 260px;
+    max-width: 1200px;
     width: 100%;
     padding: 20px;
-    box-sizing: border-box;
-    padding-top: 10px; /* <--- jarak atas supaya tidak tertutup topbar */
+    padding-top: 10px;
 }
-/* Desktop → offset karena sidebar */
+
+/** Desktop offset **/
 @media (min-width: 901px) {
     .main-content {
-        margin-left: 260px;        /* offset sidebar */
+        margin-left: 260px;
         width: calc(100% - 260px);
     }
 }
 
-/* Responsive mobile */
+/** Mobile **/
 @media (max-width: 900px) {
     .main-content {
         margin-left: 0;
         width: 100%;
-        justify-content: center; /* tetap center horizontal */
-        padding-top: 70px; /* tetap beri jarak untuk topbar mobile */
+        padding-top: 70px;
     }
 
     .contact-section {

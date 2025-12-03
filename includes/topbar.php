@@ -1,4 +1,4 @@
-<!-- TOP MINI BAR (hanya muncul di mobile/tablet) -->
+<!-- TSop bar -->
 <div class="topbar-mobile">
     <div class="mini-profile">
         <img src="assets/images/profile.jpg" alt="">

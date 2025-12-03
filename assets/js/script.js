@@ -1,19 +1,16 @@
 const burgerBtn = document.getElementById("burgerBtn");
 const sidebar = document.getElementById("sidebar");
 
-// Burger button effect
+// efek klik burger, buka/tutup sidebar
 burgerBtn.addEventListener("click", () => {
     sidebar.classList.toggle("open");
 
-    // toggle icon
+    // ganti icon burger jadi silang / sebaliknya
     burgerBtn.querySelector("i").classList.toggle("fa-bars");
     burgerBtn.querySelector("i").classList.toggle("fa-times");
 });
 
-
-/******************************
- * 1. DYNAMIC TYPING TEXT
-******************************/
+// DYNAMIC TYPING TEXT
 document.addEventListener("DOMContentLoaded", () => {
     const dynamicTextElement = document.getElementById("dynamic-text");
     if (!dynamicTextElement) return;
@@ -32,6 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let wordIndex = 0;
     const prefix = "Hi, I'm ";
 
+    // efek kedip habis ngetik
     function blinkEffect(callback) {
         const wordElement = dynamicTextElement.querySelector(".dynamic-word");
         let blinkCount = 0;
@@ -49,6 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 100);
     }
 
+    // ngetik tiap huruf
     function typeWord(word, callback) {
         dynamicTextElement.innerHTML = prefix + `<span class="dynamic-word"></span>`;
         const wordElement = dynamicTextElement.querySelector(".dynamic-word");
@@ -67,6 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
         typeChar();
     }
 
+    // mulai ngetik loop kata-kata
     function startTyping() {
         typeWord(words[wordIndex], () => {
             wordIndex = (wordIndex + 1) % words.length;
@@ -77,10 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
     startTyping();
 });
 
-
-/******************************
- * 3. TOOLS SLIDER — SUPER SMOOTH
-******************************/
+// TOOLS SLIDER — SUPER SMOOTH
 (function () {
     window.addEventListener('load', initAllSliders);
 
@@ -92,6 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const container = slider.querySelector('.tools-container');
         if (!container) return;
 
+        // bikin track baru, masukin container ke track
         const track = document.createElement('div');
         track.className = 'slider-track';
         slider.insertBefore(track, container);
@@ -100,6 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let clones = [];
         let baseWidth;
 
+        // clone container biar slider panjang
         function rebuildClones() {
             clones.forEach(c => c.remove());
             clones = [];
@@ -126,9 +125,11 @@ document.addEventListener("DOMContentLoaded", () => {
         let lastTime = null;
         let running = true;
 
+        // pause slider pas hover
         slider.addEventListener('mouseenter', () => running = false);
         slider.addEventListener('mouseleave', () => running = true);
 
+        // animasi slider
         function step(timestamp) {
             if (!lastTime) lastTime = timestamp;
             const dt = (timestamp - lastTime) / 1000;
@@ -148,6 +149,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         requestAnimationFrame(step);
 
+        // handle resize biar clone ikut update
         let resizeTimeout;
         window.addEventListener('resize', () => {
             clearTimeout(resizeTimeout);
@@ -160,15 +162,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 })();
 
-/******************************
- * 4. SCRAMBLE NUMBER STATS
-******************************/
+// SCRAMBLE NUMBER STATS
 document.addEventListener("DOMContentLoaded", () => {
     const stats = document.querySelectorAll(".stat-number");
     if (!stats.length) return;
 
     const chars = "#@!$%^&*()_+-=<>?|0123456789";
 
+    // acak angka sebelum muncul nilai final
     function chaoticScramble(element, finalValue) {
         let frame = 0;
         const digitLimit = finalValue.toString().length;
@@ -200,15 +201,13 @@ document.addEventListener("DOMContentLoaded", () => {
     stats.forEach(stat => chaoticScramble(stat, stat.dataset.target || "0"));
 });
 
-
-/******************************
- * 5. ABOUT PAGE — TAB SYSTEM
-******************************/
+// ABOUT PAGE — TAB SYSTEM
 document.addEventListener("DOMContentLoaded", () => {
     const tabButtons = document.querySelectorAll('.tab-btn');
     const tabContents = document.querySelectorAll('.tab-content');
     const tabSlider = document.querySelector('.tab-slider');
 
+    // geser slider ke tab aktif
     function moveSlider(active) {
         if (!active || !tabSlider) return;
         const rect = active.getBoundingClientRect();
@@ -221,9 +220,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     tabButtons.forEach(btn => {
         btn.addEventListener('click', () => {
+            // hapus active semua
             tabButtons.forEach(b => b.classList.remove('active'));
             tabContents.forEach(c => c.classList.remove('active'));
 
+            // set active tab ini
             btn.classList.add('active');
             document.getElementById(btn.dataset.target)?.classList.add('active');
 
@@ -233,9 +234,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-
-// grid projects
-
+// GRID PROJECTS
 document.addEventListener("DOMContentLoaded", function() {
     const projectsGrid = document.getElementById("projectsGrid");
     const cards = Array.from(projectsGrid.children); // semua card
@@ -244,16 +243,25 @@ document.addEventListener("DOMContentLoaded", function() {
     let currentPage = 1;
     const totalPages = Math.ceil(cards.length / perPage);
 
+    // tampilkan halaman tertentu
     function showPage(page) {
         const start = (page - 1) * perPage;
         const end = start + perPage;
         cards.forEach((card, i) => {
             card.style.display = (i >= start && i < end) ? "flex" : "none";
         });
-        renderPagination();
     }
 
+    // bikin tombol pagination
     function renderPagination() {
+        // sembunyiin pagination kalau total card <= perPage
+        if (cards.length <= perPage) {
+            pagination.style.display = "none";
+            return;
+        } else {
+            pagination.style.display = "flex";
+        }
+
         pagination.innerHTML = "";
         for (let i = 1; i <= totalPages; i++) {
             const btn = document.createElement("button");
@@ -262,59 +270,71 @@ document.addEventListener("DOMContentLoaded", function() {
             btn.addEventListener("click", () => {
                 currentPage = i;
                 showPage(currentPage);
+                renderPagination(); // update active button
             });
             pagination.appendChild(btn);
         }
     }
 
     showPage(currentPage);
+    renderPagination();
 });
 
 
-//pagination counting
+//check-pass
+async function checkPass() {
+    const key = document.getElementById("contactKey").value.trim();
+    const status = document.getElementById("contact-status");
+    const contactDiv = document.getElementById("contact-info");
 
-const projectsGrid = document.getElementById('projectsGrid');
-const pagination = document.getElementById('pagination');
-
-const cardsPerPage = 9;
-const cards = Array.from(projectsGrid.children);
-const totalCards = cards.length;
-const totalPages = Math.ceil(totalCards / cardsPerPage);
-
-// fungsi tampilkan halaman
-function showPage(page) {
-    const start = (page - 1) * cardsPerPage;
-    const end = start + cardsPerPage;
-
-    cards.forEach((card, index) => {
-        card.style.display = (index >= start && index < end) ? 'block' : 'none';
-    });
-
-    // update tombol pagination aktif
-    Array.from(pagination.children).forEach((btn, i) => {
-        btn.classList.toggle('active', i + 1 === page);
-    });
-}
-
-// generate pagination
-function createPagination() {
-    if (totalCards <= cardsPerPage) {
-        pagination.style.display = 'none'; // sembunyikan kalau kurang dari 9
+    if (!key) {
+        status.innerText = "⚠ Please enter a key";
+        status.style.color = "#f55";
         return;
     }
 
-    pagination.style.display = 'flex';
-    pagination.innerHTML = '';
+    try {
+        // Step 1: cek password
+        const res = await fetch("api/contact_api.php", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: "mode=check&key=" + encodeURIComponent(key)
+        });
+        const data = await res.json();
 
-    for (let i = 1; i <= totalPages; i++) {
-        const btn = document.createElement('button');
-        btn.textContent = i;
-        btn.addEventListener('click', () => showPage(i));
-        if (i === 1) btn.classList.add('active'); // default halaman 1
-        pagination.appendChild(btn);
+        if (data.status !== "ok") {
+            status.innerText = "✖ Wrong Key";
+            status.style.color = "#f55";
+            contactDiv.innerHTML = "";
+            contactDiv.classList.remove("show");
+            return;
+        }
+
+        // Step 2: ambil kontak
+        const resContacts = await fetch("api/contact_api.php", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: "mode=get&key=" + encodeURIComponent(key)
+        });
+        const dataContacts = await resContacts.json();
+
+        if (dataContacts.status === "ok") {
+            status.innerText = "✔ Access Granted";
+            status.style.color = "#0f0";
+            contactDiv.innerHTML = dataContacts.html;
+            contactDiv.classList.add("show"); // tampil grid
+        } else {
+            status.innerText = "⚠ Failed to load contacts";
+            status.style.color = "#f55";
+            contactDiv.innerHTML = "";
+            contactDiv.classList.remove("show");
+        }
+
+    } catch (err) {
+        console.error(err);
+        status.innerText = "⚠ Error connecting to server";
+        status.style.color = "#f55";
+        contactDiv.innerHTML = "";
+        contactDiv.classList.remove("show");
     }
 }
-
-// init
-createPagination();
-showPage(1);

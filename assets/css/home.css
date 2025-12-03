@@ -1,15 +1,11 @@
-/* ==============================
-   HOME PAGE GLOBAL
-============================== */
-
-/* Desktop dengan sidebar */
+/** HOME PAGE **/
 #home {
-    margin-left: 260px;
+    margin-left: 260px; /* desktop sidebar */
     padding-top: 20px;
     box-sizing: border-box;
 }
 
-/* Tablet & Mobile Portrait */
+/** Tablet & Mobile Portrait **/
 @media (max-width: 992px) {
     #home {
         margin-left: 0;
@@ -17,7 +13,7 @@
     }
 }
 
-/* Mobile Landscape */
+/** Mobile Landscape **/
 @media (max-width: 768px) and (orientation: landscape) {
     #home {
         margin-left: 0;
@@ -27,12 +23,9 @@
     }
 }
 
-/* ==============================
-   TERMINAL BOX
-============================== */
-
+/** TERMINAL BOX **/
 .bash {
-    background-color: rgba(10,10,10,0.6);
+    background: rgba(10,10,10,0.6);
     border: 1px solid rgba(255,255,255,0.2);
     box-shadow: 0 0 10px rgba(255,255,255,0.05);
     border-radius: 8px;
@@ -42,26 +35,15 @@
     overflow-x: auto;
 }
 
-.bash-header { 
-    color: #bbb; 
-    margin-bottom: 4px; 
-}
+.bash-header { color: #bbb; margin-bottom: 4px; }
+.bash-body { color: #bbb; white-space: pre-line; font-size: 14px; }
 
-.bash-body { 
-    color: #bbb; 
-    white-space: pre-line; 
-    font-size: 14px; 
-}
-
-/* Terminal colors */
+/** terminal colors **/
 .user-name { color: #00ff00; }
 .shell { color: #800080; }
 .current-directory { color: #FFA500; }
 
-#dynamic-text { 
-    color: #bbb; 
-    font-size: 14px; 
-}
+#dynamic-text { color: #bbb; font-size: 14px; }
 
 .cursor {
     width: 2px;
@@ -70,19 +52,13 @@
     animation: blink 1s infinite;
 }
 
-@keyframes blink { 
-    50% { opacity: 0; } 
-}
+@keyframes blink { 50% { opacity: 0; } }
 
-/* ==============================
-   CYBER STATS
-============================== */
-
+/** CYBER STATS **/
 .cyber-stats {
     display: flex;
     justify-content: space-evenly;
-    margin-top: 20px;
-    margin-bottom: 30px;
+    margin: 20px 0 30px;
     flex-wrap: wrap;
     gap: 20px;
 }
@@ -104,24 +80,17 @@
     margin-top: 4px;
 }
 
-.stat-number,
-.stat-label {
+.stat-number, .stat-label {
     display: block;
 }
 
-/* ==============================
-   TOOLS SLIDER
-============================== */
-
-.tools-section {
-    padding: 8px 0;
-}
+/** TOOLS SLIDER **/
+.tools-section { padding: 8px 0; }
 
 .tools-section h6 {
     color: #ddd;
     font-family: "Courier New", monospace;
     font-size: 20px;
-    text-align: left;
     margin-bottom: 5px;
     letter-spacing: 1px;
 }
@@ -132,7 +101,6 @@
     position: relative;
     margin: 5px 0;
     padding: 5px 0;
-    box-sizing: border-box;
 }
 
 .slider-track {
@@ -147,23 +115,21 @@
     flex-wrap: nowrap;
     gap: 14px;
     padding-right: 14px;
-    box-sizing: border-box;
 }
 
 .tool-card {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
     padding: 9px 14px;
     border-radius: 8px;
-    background-color: rgba(10, 10, 10, 0.6);
+    background: rgba(10, 10, 10, 0.6);
     border: 1px solid rgba(255, 255, 255, 0.2);
     color: #ddd;
     white-space: nowrap;
     font-family: "Courier New", monospace;
     font-size: 14px;
     font-weight: bold;
-    transition: transform .18s ease, background .18s ease;
+    transition: .18s ease;
 }
 
 .tool-card:hover {
@@ -180,7 +146,7 @@
     padding-right: 5px;
 }
 
-/* Slider gradient overlay */
+/** gradient overlay **/
 .tools-slider::before,
 .tools-slider::after {
     content: "";
@@ -194,124 +160,73 @@
 
 .tools-slider::before {
     left: 0;
-    background: linear-gradient(
-        to right,
-        rgba(0,0,0,1) 0%,
-        rgba(0,0,0,0.85) 20%,
-        rgba(0,0,0,0.55) 50%,
-        rgba(0,0,0,0.25) 75%,
-        rgba(0,0,0,0) 100%
+    background: linear-gradient(to right,
+        rgba(0,0,0,1),
+        rgba(0,0,0,0)
     );
 }
 
 .tools-slider::after {
     right: 0;
-    background: linear-gradient(
-        to left,
-        rgba(0,0,0,1) 0%,
-        rgba(0,0,0,0.85) 20%,
-        rgba(0,0,0,0.55) 50%,
-        rgba(0,0,0,0.25) 75%,
-        rgba(0,0,0,0) 100%
+    background: linear-gradient(to left,
+        rgba(0,0,0,1),
+        rgba(0,0,0,0)
     );
 }
 
-/* ==============================
-   RESPONSIVE ADJUSTMENTS
-============================== */
-
-/* Mobile Portrait */
+/** RESPONSIVE: Mobile Portrait **/
 @media (max-width: 576px) {
-
     #home {
         padding-top: 80px;
         padding-left: 10px;
         padding-right: 10px;
     }
 
-    .bash {
-        padding: 15px;
-        font-size: 13px;
-    }
+    .bash { padding: 15px; font-size: 13px; }
 
-    .cyber-stats {
-        flex-direction: column;
-        gap: 15px;
-    }
-
+    .cyber-stats { flex-direction: column; gap: 15px; }
     .stat-number { font-size: 22px; }
     .stat-label { font-size: 12px; }
 
     .tools-section h6 { font-size: 18px; }
 
-    .tool-card {
-        padding: 7px 10px;
-        font-size: 12px;
-    }
+    .tool-card { padding: 7px 10px; font-size: 12px; }
 
     .tools-slider::before,
-    .tools-slider::after {
-        width: 70px;
-    }
+    .tools-slider::after { width: 70px; }
 }
 
-/* Mobile Landscape */
+/** RESPONSIVE: Mobile Landscape **/
 @media (max-width: 768px) and (orientation: landscape) {
-
     #home {
         margin-left: 0;
         padding-top: calc(60px + env(safe-area-inset-top));
         padding-left: 10px;
         padding-right: 10px;
-        box-sizing: border-box;
     }
 
-    .bash {
-        padding: 12px;
-        font-size: 13px;
-        overflow-x: auto;
-    }
+    .bash { padding: 12px; font-size: 13px; }
 
-    .cyber-stats {
-        flex-direction: column;
-        gap: 12px;
-    }
-
+    .cyber-stats { flex-direction: column; gap: 12px; }
     .stat-number { font-size: 20px; }
     .stat-label { font-size: 11px; }
 
     .tools-section h6 { font-size: 16px; }
-
-    .tool-card {
-        padding: 6px 10px;
-        font-size: 11px;
-    }
+    .tool-card { padding: 6px 10px; font-size: 11px; }
 
     .tools-slider::before,
-    .tools-slider::after {
-        width: 90px;
-    }
+    .tools-slider::after { width: 90px; }
 }
 
-/* Tablet */
+/** RESPONSIVE: Tablet **/
 @media (max-width: 992px) {
     .tools-slider::before,
-    .tools-slider::after {
-        width: 120px;
-    }
-
-    .tool-card {
-        padding: 8px 12px;
-    }
-
-    .cyber-stats {
-        flex-wrap: wrap;
-    }
+    .tools-slider::after { width: 120px; }
+    .tool-card { padding: 8px 12px; }
+    .cyber-stats { flex-wrap: wrap; }
 }
 
-/* Desktop Wide */
+/** Desktop Wide **/
 @media (min-width: 1200px) {
-    #home {
-        padding-right: 40px;
-    }
+    #home { padding-right: 40px; }
 }

@@ -1,7 +1,7 @@
 <!-- home.php -->
 <section id="home">
 
-    <!-- ======================  BASH TERMINAL  ====================== -->
+    <!-- Bash Terminal -->
     <div class="bash">
         <div class="bash-header">
             <span id="dynamic-text"></span><span class="cursor"></span>
@@ -22,7 +22,7 @@
         </div>
     </div>
 
-    <!-- ======================  CYBER STATS  ====================== -->
+    <!-- Cyber Stats -->
     <div class="cyber-stats">
         <div class="stat-item">
             <span class="stat-number" data-target="0.6">0</span>
@@ -38,7 +38,7 @@
         </div>
     </div>
 
-    <!-- ======================  TOOLS SLIDER  ====================== -->
+    <!-- Tools Slider -->
     <div class="tools-section">
         <h6>Tools That I Have Used</h6>
 

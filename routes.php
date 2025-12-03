@@ -6,7 +6,7 @@ $allowed = ['home', 'about', 'contact'];
 
 if (!in_array($page, $allowed)) {
     include __DIR__ . '/404.php';
-    exit; // <- Sangat penting
+    exit;
 }
 
 include __DIR__ . "/pages/$page.php";

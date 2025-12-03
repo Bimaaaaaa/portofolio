@@ -6,7 +6,7 @@ $currentPage = $currentPage === "" ? "home" : $currentPage;
 ?>
 
 
-<!-- SIDEBAR -->
+<!-- Sidebar -->
 <aside class="sidebar" id="sidebar">
     <div class="profile">
         <img src="assets/images/profile.jpg" alt="">

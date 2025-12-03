@@ -26,7 +26,7 @@
     }
 
     .error-page h1 {
-        font-size: 25px; /* ukuran kecil */
+        font-size: 25px;
         font-weight: normal;
         color: #fff;
         letter-spacing: 1px;

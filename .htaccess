@@ -1,23 +1,19 @@
 RewriteEngine On
 RewriteBase /portofolio3/
 
-# Izinkan folder static (wajib di atas)
-RewriteRule ^(assets|css|js|images|vendor)/ - [L]
+# Approve folder static
+RewriteRule ^(assets|css|js|images|vendor|api)/ - [L]
 
 
-# ------------------------------
-# URL CANTIK
+
+# URL
 # /about  → index.php?page=about
-# ------------------------------
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^([^/]+)/?$ index.php?page=$1 [L,QSA]
 
 
-# ------------------------------
-# SECURITY (VERSI AMAN UNTUK WINDOWS)
-# ------------------------------
-
+# SECURITY
 # Izinkan hanya page yang boleh diakses langsung
 RewriteRule ^(home|about|projects|contact|404)\.php$ - [L]
 
@@ -32,7 +28,7 @@ RewriteRule ^.*\.php$ - [F]
 Options -Indexes
 
 
-# PDF tetap inline
+# PDF inline
 <FilesMatch "\.pdf$">
     ForceType application/pdf
     Header set Content-Disposition "inline"

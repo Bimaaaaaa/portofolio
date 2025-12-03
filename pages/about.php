@@ -2,13 +2,13 @@
 
     <div id="about-page" class="main-content">
 
-        <!-- ===== TITLE ===== -->
+        <!-- Title -->
         <div class="about-title">
             <h1>About Me</h1>
             <h5>A snapshot of my journey – as every piece shapes the mosaic of life.</h5>
         </div>
 
-        <!-- ===== TAB MENU ===== -->
+        <!-- Tab Menu -->
         <div class="tab-menu">
             <span class="tab-slider"></span>
 
@@ -25,10 +25,9 @@
             </button>
         </div>
 
-        <!-- ===== TAB CONTENT WRAPPER ===== -->
+        <!-- Tab Content Wrapper -->
         <div class="tab-content-frame">
-            <!-- Isi konten sama seperti sebelumnya -->
-             <!-- INTRO -->
+             <!-- Intro -->
             <div class="tab-content active" id="intro">
                 <!-- <h2>Intro</h2> -->
                 <p>
@@ -57,7 +56,7 @@
                 </p>
             </div>
 
-            <!-- EDUCATION -->
+            <!-- Education -->
             <div class="tab-content" id="education">
                 <h2>Education</h2>
                 <div class="edu-wrapper">

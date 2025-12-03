@@ -1,19 +1,14 @@
-/* ===========================================
-   ABOUT PAGE GLOBAL
-=========================================== */
-
-/* Main Content & About Page */
+/* main */
 .main-content, #about-page {
     width: 100%;
+    padding: 5px 20px 20px;
     box-sizing: border-box;
-    padding: 5px 20px 20px 20px; /* top, right, bottom, left */
-    display: block;
 }
 
 /* About Section */
 .about-section {
-    background-color: rgba(10, 10, 10, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(10,10,10,0.6);
+    border: 1px solid rgba(255,255,255,0.2);
     box-shadow: 0 0 10px rgba(255,255,255,0.05);
     color: #bbb;
     padding: 50px 30px;
@@ -21,7 +16,7 @@
     margin-bottom: 30px;
 }
 
-/* Title */
+/* Titles */
 #about-page .about-title h1 {
     font-size: 36px;
     font-weight: 700;
@@ -36,7 +31,6 @@
     margin-bottom: 25px;
 }
 
-/* Paragraphs */
 .about-section p {
     font-size: 15px;
     line-height: 1.7;
@@ -49,20 +43,18 @@
     font-weight: 600;
 }
 
-/* ===========================================
-   TAB MENU
-=========================================== */
+/* tab menu */
 #about-page .tab-menu {
     display: flex;
     justify-content: center;
     gap: 15px;
-    position: relative;
-    background-color: rgba(10, 10, 10, 0.6);
-    border: 1px solid rgba(255,255,255,0.2);
-    border-radius: 12px;
     padding: 6px 10px;
     margin-bottom: 25px;
+    background: rgba(10,10,10,0.6);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 12px;
     flex-wrap: wrap;
+    position: relative;
     backdrop-filter: blur(4px);
 }
 
@@ -75,7 +67,7 @@
     background: rgba(255,255,255,0.08);
     border-radius: 12px;
     transform: translateY(-50%);
-    transition: all 0.35s ease;
+    transition: 0.35s ease;
     z-index: 0;
 }
 
@@ -108,24 +100,21 @@
     opacity: 1;
 }
 
-/* ===========================================
-   TAB CONTENT FRAME
-=========================================== */
+/* tab conten */
 #about-page .tab-content-frame {
-    background-color: rgba(10, 10, 10, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(10,10,10,0.6);
+    border: 1px solid rgba(255,255,255,0.2);
     box-shadow: 0 0 10px rgba(255,255,255,0.05);
     border-radius: 12px;
     padding: 25px;
     backdrop-filter: blur(3px);
 }
 
-/* Tab Content */
 #about-page .tab-content {
     display: none;
     opacity: 0;
     transform: translateX(-30px);
-    transition: all 0.35s ease;
+    transition: 0.35s ease;
 }
 
 #about-page .tab-content.active {
@@ -147,9 +136,7 @@
     margin-bottom: 15px;
 }
 
-/* ===========================================
-   EDUCATION SECTION
-=========================================== */
+/* education */
 #about-page .edu-wrapper {
     display: flex;
     flex-direction: column;
@@ -160,9 +147,9 @@
     display: flex;
     gap: 15px;
     align-items: center;
-    border-radius: 12px;
     padding: 15px;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    border-radius: 12px;
+    transition: 0.25s ease;
 }
 
 #about-page .edu-card:hover {
@@ -194,9 +181,7 @@
     color: #aaa;
 }
 
-/* ===========================================
-   RESUME
-=========================================== */
+/* resume */
 #resume .resume-iframe-wrapper {
     display: flex;
     justify-content: center;
@@ -216,14 +201,10 @@
     background: rgba(255,255,255,0.1);
     color: #fff;
     border-radius: 8px;
-    text-decoration: none;
     font-size: 14px;
     border: 1px solid rgba(255,255,255,0.2);
+    text-decoration: none;
     transition: 0.3s;
-}
-
-.download-btn i {
-    margin-right: 5px;
 }
 
 .download-btn:hover {
@@ -231,136 +212,67 @@
     transform: translateY(-2px);
 }
 
-/* ===========================================
-   MAIN LAYOUT
-=========================================== */
+/* layout */
 .main-layout {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-/* ===========================================
-   RESPONSIVE
-=========================================== */
+/* responsive */
 @media (max-width: 900px) {
-    #about-page .tab-menu {
-        gap: 10px;
-        padding: 6px 8px;
-    }
-
     #about-page .tab-btn {
         padding: 6px 10px;
         font-size: 13px;
     }
-
     #about-page .tab-slider {
         height: 28px;
     }
-
     #about-page .edu-card {
         flex-direction: column;
         align-items: flex-start;
     }
-
     #about-page .edu-card img {
         width: 70px;
         height: 70px;
     }
-
-    #about-page .edu-info h3 {
-        font-size: 16px;
-    }
-
-    #about-page .edu-info p,
-    #about-page .edu-info span {
-        font-size: 13px;
-    }
-
     #resume .resume-iframe-wrapper iframe {
         width: 95%;
         height: 900px;
     }
-
-    .download-btn {
-        font-size: 13px;
-        padding: 6px 12px;
-    }
 }
 
 @media (max-width: 420px) {
-    #about-page .tab-menu {
-        gap: 6px;
-        padding: 5px 6px;
-    }
-
     #about-page .tab-btn {
         padding: 5px 8px;
         font-size: 12px;
     }
-
     #about-page .tab-slider {
         height: 25px;
     }
 }
 
-
 @media (max-width: 700px) {
     .main-content, #about-page {
-        padding-top: 60px; /* sesuaikan tinggi top bar */
-        padding-left: 10px;
-        padding-right: 10px;
-        padding-bottom: 20px;
+        padding: 60px 10px 20px;
     }
 }
 
-
-/* Tablet potrait / ukuran sekitar 1024px */
+/* Tablet portrait (≈1024px) */
 @media (min-width: 901px) and (max-width: 1366px) and (orientation: portrait) {
     .main-content, #about-page {
-        width: 75%; /* pakai full lebar */
-        padding: 20px 15px 40px 15px;
-        box-sizing: border-box;
+        width: 75%;
+        padding: 20px 15px 40px;
         overflow-x: hidden;
     }
-
-    .about-section, 
-    #about-page .tab-content-frame {
-        padding: 25px 15px;
-    }
-
     #about-page .about-title h1 {
         font-size: 26px;
     }
-
     #about-page .tab-content h2 {
         font-size: 18px;
     }
-
-    #about-page .tab-content p,
-    .about-section p {
-        font-size: 14px;
-        line-height: 1.5;
-    }
-
-    #about-page .edu-card img {
-        width: 65px;
-        height: 65px;
-    }
-
-    #about-page .edu-info h3 {
-        font-size: 15px;
-    }
-
-    #about-page .edu-info p,
-    #about-page .edu-info span {
-        font-size: 12px;
-    }
-
     #resume .resume-iframe-wrapper iframe {
         width: 95%;
         height: 900px;
     }
 }
-
-

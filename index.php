@@ -5,13 +5,11 @@ $page = $_GET['page'] ?? 'home';
 // Pages yang diizinkan
 $allowed = ['home', 'about','projects' ,'contact'];
 
-// Jika halaman TIDAK ada → langsung tampilkan 404 & STOP
+// Tampilkan 404 & STOP jika file kosong
 if (!in_array($page, $allowed)) {
     include __DIR__ . '/404.php';
     exit; 
 }
-
-// HANYA MASUK KE SINI kalau halaman VALID
 
 include 'includes/header.php';
 include 'includes/topbar.php';
