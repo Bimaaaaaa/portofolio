@@ -338,3 +338,22 @@ async function checkPass() {
         contactDiv.classList.remove("show");
     }
 }
+
+//info-icon
+function handleTooltip(event) {
+    const infoIcon = document.querySelector('.info-icon');
+    
+    // Toggle kelas active
+    infoIcon.classList.toggle('active');
+    
+    // Mengambil teks yang ada di dalam data-tooltip
+    const tooltipText = event.target.getAttribute('data-tooltip');
+    
+    // Membuat elemen input untuk menyalin teks ke clipboard
+    const textarea = document.createElement('textarea');
+    textarea.value = tooltipText; // Masukkan teks tooltip
+    document.body.appendChild(textarea); // Tambahkan ke body
+    textarea.select(); // Pilih teks
+    document.execCommand('copy'); // Salin teks ke clipboard
+    document.body.removeChild(textarea); // Hapus elemen textarea dari DOM
+}
