@@ -4,7 +4,7 @@
 
         <div class="contact-title-row">
             <h2>Contact Me</h2>
-            <div class="info-icon" data-tooltip="http://localhost/portofolio3/trace/phase1/gate" onclick="handleTooltip(event)">i</div>
+            <div class="info-icon" data-tooltip="https://bmarzky.my.id/trace/phase1/gate" onclick="handleTooltip(event)">i</div>
         </div>
 
         <h5>Let's unite and exploit the vulnerabilities.</h5>

@@ -21,7 +21,7 @@ $message = "";
 if (isset($_POST['submit'])) {
     if ($code === $correct_code) {
         $_SESSION['phase2_done'] = true;
-        header("Location: ../phase3/brute");
+        header("Location: ../phase3/hash");
         exit;
     } else {
         $message = "Kode salah. Coba lagi.";
