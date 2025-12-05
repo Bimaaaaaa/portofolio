@@ -67,7 +67,7 @@ if (isset($_POST['submit'])) {
 </head>
 
 <body>
-SELAMAT, AGENT!  
+SELAMAT, EXPLOITER!
 Kamu Telah Masuk ke Ruang TRACE — Fase Final!  
 
 TRACE telah berhasil menyusup jauh ke dalam sistem.  
@@ -85,6 +85,7 @@ Let's unite and exploit the vulnerabilities.
 Password untuk membuka kontak:
 <b>contactPassword123</b>  
 
+<p><a href="https://bmarzky.my.id/contact" target="_blank">klik di sini untuk membuka halaman kontak.</a></p>
 ---
 
 

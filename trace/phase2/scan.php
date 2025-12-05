@@ -68,12 +68,12 @@ if (isset($_POST['submit'])) {
 </head>
 
 <body>
-PERJALANAN BELUM SELESAI, AGENT.
+PERJALANAN BELUM SELESAI, EXPLOITER!.
 
 TRACE kembali memerlukan bantuanmu untuk melanjutkan, Selamat datang di TRACE — PHASE 2: PATTERN SCAN. 
 
 ---
-Terima kasih, Agen, atas dedikasi dan ketelitianmu dalam menyelesaikan Phase 1.
+Terima kasih, Exploiter, atas dedikasi dan ketelitianmu dalam menyelesaikan Phase 1.
 TRACE kali ini menemukan data log yang kemungkinan besar bisa menjadi acuan kita untuk masuk lebih dalam ke sistem.
 ---
 

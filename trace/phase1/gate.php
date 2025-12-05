@@ -59,7 +59,7 @@ if (isset($_POST['submit'])) {
 
 <body>
 
-WELCOME, AGENT.
+WELCOME, EXPLOITER!.
 
 TRACE telah menunggu cukup lama, Selamat datang di TRACE — PHASE 1: GATE. 
 

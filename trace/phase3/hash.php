@@ -67,12 +67,12 @@ if (isset($_POST['submit'])) {
 </head>
 
 <body>
-PERJALANAN BERLANJUT, AGENT.
+PERJALANAN BERLANJUT, EXPLOITER!.
 
 TRACE kembali membutuhkan bantuanmu untuk melangkah lebih dalam. Ini adalah TRACE — PHASE 3: HASH EXTRACTION.
 
 ---
-Luar biasa, Agen, karena usaha kamu yang luar biasa dalam menyelesaikan Phase 2.
+Luar biasa, Exploiter, karena usaha kamu yang luar biasa dalam menyelesaikan Phase 2.
 TRACE bisa masuk lebih dalam lalu menemukan sebuah backup password.
 
 ---
@@ -82,7 +82,7 @@ File backup password ini masih belum dapat membuka akses ke sistem utama.
 Namun, TRACE juga menemukan biodata pribadi yang mengandung informasi tentang admin perusahaan.
 Meski informasi ini tidak langsung memberikan akses, ia bisa menjadi kunci untuk menggali lebih dalam.
 
-Agen, waktumu untuk menyelesaikan ini telah tiba.
+Exploiter, waktumu untuk menyelesaikan ini telah tiba.
 
 ---
 FILE-BIO-ADMIN
